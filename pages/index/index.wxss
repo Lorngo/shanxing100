@@ -67,7 +67,6 @@ page {
   height: 298rpx;
   border-radius: 12rpx;
   overflow: hidden;
-  background-color: red;
 
 }
 
