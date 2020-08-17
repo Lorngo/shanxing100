@@ -1,7 +1,7 @@
 //index.js
 import api from '../../utils/api/api'
-import login from '../../utils/api/login'
 import tool from '../../utils/publics/tool'
+import login from '../../utils/api/login'
 
 Page({
   data: {
