@@ -71,6 +71,11 @@ page {
 
 }
 
+.swiper image{
+  width: 100% !important;
+  height: 100% !important;
+}
+
 #go {
   width: 694rpx;
   height: 120rpx;

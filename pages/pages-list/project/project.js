@@ -1,4 +1,5 @@
 let app = new getApp()
+import api from '../../../utils/api/api'
 Page({
   data: {
     baseurl:app.globalData.ASSETSURL,
@@ -8,6 +9,9 @@ Page({
 		proIndex:-1//操作的项目序号
   },
   onLoad: function (options) {
+		
+			
+		this.getXmlist()
 
   },
   onShow: function () {
@@ -45,6 +49,21 @@ Page({
 		let key = e.currentTarget.dataset.index
 		wx.navigateTo({
 			url:'../project-detail/project-detail?num='+this.data.pronumList[key]
+		})
+	},
+
+	//获取项目列表
+	getXmlist(){
+		var data = {
+			 page : 1
+		}
+
+		api.getXmlist(data).then(res => {
+			if(res.data.code == 1){
+				console.log('项目列表的值=====',res.data.data)
+			}else{
+				console.log('项目列表错误信息======',res.data.msg)
+			}
 		})
 	}
 })

@@ -1,6 +1,6 @@
 import $ from './request.js'
 import { promiseFinally } from '../promise-finally.js'
-// promiseFinally();//promise的finally配置
+import {_request} from './login.js'
 
 const _globalData = getApp().globalData
 const myRequest = (data={}, url, type = 'post', isUrl = false) => {
@@ -35,6 +35,10 @@ const uploadBase64 = (data, url = '/api/upload/upload_file_base64') => { return 
 const requestSubscribeMessage = (data, url = '/api/message/send_remind_msg') => { return myRequest(data, url) }
 //获取签名
 const getJoinVoIPChatSignature = (data, url = '/api/oauth/encrypt') => { return myRequest(data, url) }
+//获取图片
+const getImage = (data, url = 'api/banner/get_banner') => { return myRequest(data, url) }
+//项目列表
+const getXmlist = (data, url = 'api/goods/goods_list') => { return myRequest(data, url) }
 
 
 module.exports = {
@@ -46,5 +50,7 @@ module.exports = {
   getWeRunData,
   uploadBase64,
   requestSubscribeMessage,
-  getJoinVoIPChatSignature
+  getJoinVoIPChatSignature,
+  getImage,
+  getXmlist
 }

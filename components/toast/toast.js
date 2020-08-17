@@ -7,12 +7,12 @@ Component({
     confimText : {
       type : Object,
       value : {
-        title : '恭喜您',
-        main : '已成为中国扶贫基金会善行100项目志愿者，发起属于你自己的邀请捐，和大家并肩作战，做孩子们的盖世英雄吧！',
+        title : '',
+        main : '',
         left : '' ,
         right : '',
-        type : 2,
-        mainbut : '发起邀请捐'
+        type : 0,
+        mainbut : ''
       }
     },
    
@@ -46,11 +46,11 @@ Component({
       this.setData({
         toastShow : true
       })
-    },500)
+    },400)
     setTimeout(()=>{
       this.setData({
         toastShow2 : true
       })
-    },700)
+    },600)
   }
 })

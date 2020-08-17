@@ -15,7 +15,7 @@
 		<swiper class="swiper" autoplay="true" indicator-dots='true' indicator-color='rgba(255,255,255,.6)' indicator-active-color='rgba(255,255,255,1)'>
 
 			<swiper-item wx:for="{{bannerList}}" wx:key="id">
-				<image src="{{item.imgUrl}}" aspect='aspectFill'></image>
+				<image src="{{item.image}}" aspect='aspectFill'></image>
 				{{index}}
 			</swiper-item>
 

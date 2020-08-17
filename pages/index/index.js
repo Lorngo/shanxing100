@@ -69,12 +69,14 @@ Page({
   onLoad(options) {
     this.configure() //核弹系统
     //静默登录
-    login.login().then(res => {
-      console.log("【静默登录成功】", res)
-      //在这里做页面初始化请求操作，可保证本地缓存中有用户的openid/userId
-    }).catch(err => {
-      console.log("err", err)
-    })
+    // login._request().then(res => {
+    //   console.log("【静默登录成功】", res)
+    //   //在这里做页面初始化请求操作，可保证本地缓存中有用户的openid/userId
+    // }).catch(err => {
+    //   console.log("err", err)
+    // })
+
+    this.getImage()
   },
 
    //跳转项目图文介绍
@@ -115,6 +117,26 @@ Page({
         title: this.data.indexPageTitle
       })
     })
+  },
+
+  //获取轮播图
+  getImage(){
+     
+    var data = {
+      position : 1 , 
+    }
+
+    api.getImage(data).then(res => {
+      if(res.data.code == 1){
+        console.log('轮播图的信息为-===',res.data.data)
+        this.setData({
+          bannerList : res.data.data.banner
+        })
+      }else{
+        console.log('轮播图的错误信息=====',res.data.msg)
+      }
+    })
+
   },
 
   onShareAppMessage() {}
