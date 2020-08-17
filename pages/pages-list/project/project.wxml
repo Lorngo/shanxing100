@@ -1,0 +1,33 @@
+<!-- 项目列表页 xw-->
+<view class="pro_content">
+	 <!-- 项目列表部分 -->
+	<scroll-view scroll-y="true" class="list_box">
+		<!-- 单个项目 -->
+		<view class="pro_box" wx:for="{{4}}" wx:key="index">
+		<view bindtap="goPage" data-index="{{index}}">
+			<view class="pro_img">
+				<!-- <image src="" mode="widthFix" style="width: 100%;height: 100%;"></image> -->
+			</view>
+			<view class="pro_name">今天请为天使点赞</view>
+			<view class="pro_text">你守护世界，我们守护你，你守护世界，我们守护你，你守我攻</view>
+		</view>
+			<!-- 捐赠按钮部分 -->
+			<view class="pro_oper">
+				<view class="addBtn">
+					捐赠数量：
+					<image bindtap="operaData" data-index="{{index}}" data-types="1" class="suba_icon" mode="aspectFit" src="{{baseurl}}{{type==1&&proIndex==index?'/project/sub_1.png':'/project/sub_2.png'}}"></image>
+				  <text class="don_num">{{pronumList[index]}}</text>
+					<image bindtap="operaData" data-index="{{index}}" data-types="2" class="suba_icon" mode="aspectFit" src="{{baseurl}}{{type==2&&proIndex==index?'/project/add_1.png':'/project/add_2.png'}}"></image>
+				</view>
+				<view class="don_money">
+					捐赠金额：
+					<text class="money_num">25024元</text>
+				</view>
+				<view class="donate_btn" bindtap="goPage" data-index="{{index}}">
+					捐赠
+				</view>
+			</view>
+		</view>
+		<view class="nomore">{{nomore==1?'加载更多':nomore==2?'加载中...':'没有更多啦~'}}</view>
+	</scroll-view>
+</view>

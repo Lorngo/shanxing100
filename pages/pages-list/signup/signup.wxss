@@ -1,0 +1,139 @@
+.volunt_cont{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	padding-bottom: 50rpx;
+}
+.hint{
+	font-size: 24rpx;
+	font-weight: 500;
+	color: #ff9425;
+	margin: 30rpx 30rpx 10rpx;
+}
+.hints{
+	font-size: 24rpx;
+	font-weight: 500;
+	color: #ff9425;
+	margin-top: 8rpx;
+}
+.volunt_box{
+	position: relative;
+	padding-bottom: 30rpx;
+}
+.volunt_box::before{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 30rpx;
+	background: #f7f7f7;
+}
+.volunt_box:nth-child(4)::before{
+	content: '';
+  height: 0;
+}
+.info_box{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 90rpx;
+	line-height: 90rpx;
+  margin: 0 30rpx;
+	border-bottom: 1px solid #EEEEEE;
+}
+.info_box_s{
+	height: 110rpx;
+	margin: 0 30rpx;
+	border-bottom: 1px solid #EEEEEE;
+}
+.school_box{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 18rpx;
+}
+.no_border{
+	border: none;
+}
+.info_title{
+	font-size: 30rpx;
+	font-weight: 500;
+	color: #666666;
+	flex: 1;
+}
+.info_input{
+	font-size: 30rpx;
+	font-weight: 500;
+	color: #333333;
+	text-align: right;
+	flex: 2;
+}
+.place_color{
+	color: #999;
+}
+.volunt_btn{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 50rpx;
+}
+.btn_box1{
+	width: 306rpx;
+	height: 74rpx;
+	background: rgba(255,238,215,0.8);
+	border-radius: 37px;
+	font-size: 30rpx;
+	font-weight: 700;
+	text-align: center;
+	color: #ff9525;
+	line-height: 74rpx;
+}
+.btn_box2{
+	width: 306rpx;
+	height: 74rpx;
+	background: linear-gradient(#ffa524 0%, #ff9225 100%);
+	border-radius: 37rpx;
+	font-size: 30rpx;
+	font-weight: 700;
+	text-align: center;
+	color: #ffffff;
+	line-height: 74rpx;
+	margin-left: 48rpx;
+}
+.more_icon{
+	width: 16rpx;
+	height: 12rpx;
+	vertical-align: middle;
+}
+.up_img{
+	margin: 0 30rpx;
+}
+.up_box{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 338rpx;
+	height: 230rpx;
+	background-color: #F7F7F7;
+	border-radius: 10rpx;
+	margin: 24rpx 0 38rpx;
+}
+.up_icon{
+	width: 66rpx;
+	height: 66rpx;
+}
+.up_text{
+	font-size: 26rpx;
+	font-weight: 500;
+	color: #666666;
+	letter-spacing: 2rpx;
+	margin-top: 12rpx;
+}
+.back_act{
+	background: rgba(251,216,169,1);
+}
+.back_btn{
+	background: linear-gradient(#ffa524 100%, #ff9225 0%);
+}

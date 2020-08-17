@@ -1,0 +1,264 @@
+.info_box{
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 330rpx;
+}
+.page_bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+.info_cpnt{
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	background-color: #fff;
+	width: 630rpx;
+	height: 240rpx;
+	background-color: #ffffff;
+	box-shadow: 0px 8rpx 22rpx 0px rgba(70, 42, 12, 0.1);
+	border-radius: 16rpx;
+	padding: 30rpx;
+}
+.user_head{
+	display: flex;
+	align-items: center;
+}
+.head_img{
+	width: 110rpx;
+	height: 110rpx;
+	border-radius: 10rpx;
+}
+.user_info{
+	margin-left: 18rpx;
+}
+.user_name{
+	display: flex;
+	align-items: center;
+}
+.names{
+	display: inline-block;
+	max-width: 370rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.user_grade{
+	display: inline-block;
+	padding: 0 10rpx;
+	height: 30rpx;
+	background-color: #ededed;
+	border-radius: 6rpx;
+	text-align: center;
+	line-height: 30rpx;
+	font-size: 22rpx;
+	color: #666666;
+	margin-left: 15rpx;
+}
+.article_line{
+	display: flex;
+	align-items: center;
+}
+.line_img{
+	position: relative;
+  width: 378rpx;
+	height: 4rpx;
+	overflow: hidden;
+}
+.article_num{
+		font-size: 20rpx;
+		color: #666666;
+		margin-left: 10rpx;
+  }
+.artic_icon{
+	width: 78rpx;
+	height: 36rpx;
+	border-radius: 18rpx;
+	border:1rpx solid #999999;
+	text-align: center;
+	line-height: 30rpx;
+}
+.donate_data{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin-top: 40rpx;
+}
+.num_data{
+	text-align: center;
+}
+.num_top{
+		font-size: 40rpx;
+		color: #333333;
+}
+.num_bottom{
+		font-size: 24rpx;
+		color: #666666;
+		opacity: 0.8;
+}
+/* 功能操作 */
+.opera_cont{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	padding: 0 70rpx;
+	margin-top: 40rpx;
+}
+.opera_cont::before{
+	content: '';
+	position: absolute;
+  bottom: 0;
+	width: 100%;
+	height: 20rpx;
+	background-color: #f7f7f7;
+}
+.opera_box{
+	width: 33.33%;
+	text-align: center;
+	margin-bottom: 48rpx;
+}
+.opera_icon{
+	width: 70rpx;
+	height: 70rpx;
+}
+.opera_text{
+		font-size: 24rpx;
+		color: #333333;
+		margin-top: 4rpx;
+}
+/* 勋章部分 */
+
+.achieve_cont{
+	margin-top: 26rpx;
+}
+.achi_title{
+		font-size: 34rpx;
+		color: #333333;
+		margin-left: 26rpx;
+}
+.achieve_box{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin-top: 28rpx;
+	padding: 0 70rpx;
+}
+.medal_cont{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 33.33%;
+	text-align: center;
+	margin-bottom: 24rpx;
+}
+.medal_show{
+	position: relative;
+	width: 120rpx;
+	height: 102rpx;
+	background-repeat: no-repeat;
+	background-position: center;
+  background-size: 100% 100%;
+}
+.start_box{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	position: absolute;
+	bottom: 12rpx;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 96rpx;
+	height: 30rpx;
+}
+.start_icon{
+	width: 26rpx;
+	height: 26rpx;
+}
+.start_icon:nth-child(2)
+{
+	margin-bottom: 6rpx;
+}
+.medal_text{
+		font-size: 26rpx;
+		color: #333333;
+		margin-top: 10rpx;
+}
+/* 勋章弹窗 */
+.medal_pup{
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+}
+.medal_icon{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 566rpx;
+	height: 409rpx;
+	background-color: #ffffff;
+	border-radius: 20rpx;
+}
+.close_btn{
+	position: absolute;
+	top: 16rpx;
+	right: 16rpx;
+	width: 22rpx;
+	height: 22rpx;
+}
+.medal_pups{
+	position: relative;
+	width: 230rpx;
+	height: 180rpx;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+}
+.pupstart_box{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	position: absolute;
+	bottom: 30rpx;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 130rpx;
+	height: 50rpx;
+}
+.pup_start{
+	width: 40rpx;
+	height: 40rpx;
+}
+.pup_start:nth-child(2)
+{
+	margin-bottom: 6rpx;
+}
+.pup_text{
+		font-size: 30rpx;
+		letter-spacing: 4rpx;
+		color: #333333;
+		margin: 25rpx;
+}
+.medal_cond{
+		font-size: 24rpx;
+		letter-spacing: 2rpx;
+		color: #999999;
+}

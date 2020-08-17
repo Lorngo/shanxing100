@@ -1,0 +1,209 @@
+/* pages/pages-list/donate/donate.wxss */
+.page{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.page .list{
+  width: 694rpx;
+  height: 100%;
+  margin: 0rpx auto;
+}
+
+.page .list .box{
+  height: 88rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid rgba(229,229,229,1);
+}
+
+.page .list .box view{
+  font-size: 28rpx;
+font-family: PingFang SC Medium, PingFang SC Medium-Medium;
+font-weight: 500;
+text-align: left;
+color: #666666;
+}
+
+.page .list .box  .right{
+  width: 486rpx;
+  height: 27rpx;
+  text-align: right;
+}
+
+
+.page .list .box .rightFlex .smallBox{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  position: absolute;
+  right: 0rpx;
+}
+
+.page .list .box .rightFlex{
+  
+  position: relative;
+  height: 30rpx;
+}
+
+.page .list .box   picker{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.page .list .box   picker  .right .txt{
+  float: right;
+}
+
+.page .list .box   picker  .right .icon{
+  width: 14rpx;
+  height: 9rpx;
+  background-image: url('https://img.vrupup.com/web/wyl/shanxing100/common/index_icon_01.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-left: 18rpx;
+}
+
+.page .list .box .title{
+  font-size: 28rpx;
+font-family: PingFang SC Medium, PingFang SC Medium-Medium;
+font-weight: 500;
+color: #333333;
+}
+
+.page .list .image{
+  height: 331rpx;
+  width: 100%;
+  padding-top: 32rpx;
+  border-bottom: 1rpx solid rgba(229,229,229,1);
+}
+
+.page .list .image .top{
+  font-size: 28rpx;
+font-family: PingFang SC Medium, PingFang SC Medium-Medium;
+font-weight: 500;
+text-align: left;
+color: #666666;
+}
+
+.page .list .image .top text{
+  font-size: 24rpx;
+  color: rgba(153,153,153,1);
+  margin-left: -8rpx;
+}
+
+.page .list .image .photo{
+  width: 337rpx;
+  height: 229rpx;
+  border-radius: 10rpx;
+  background-color: #f7f7f7;
+  margin-top: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.page .list .image .photo image{
+  width: 100%;
+  height: 100%;
+}
+
+.page .list .image .photo .box{
+  width: 120rpx;
+  height: 120rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.page .list .image .photo .box .img{
+  width: 66rpx;
+  height: 66rpx;
+  background-image: url('https://img.vrupup.com/web/wyl/shanxing100/common/index_icon_03.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.page .list .image .photo .box .txt{
+  width: 100%;
+  height: 25rpx;
+  text-align: center;
+  font-size: 26rpx;
+font-family: PingFang SC Medium, PingFang SC Medium-Medium;
+font-weight: 500;
+color: #666666;
+letter-spacing: 1px;
+}
+
+.page .list .check{
+  width: 100%;
+  height: 35rpx;
+  margin-top: 35rpx;
+  display: flex;
+  align-items: center;
+}
+
+.page .list .check .icon{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page .list .check .icon view{
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.page .list .check .txt{
+  font-size: 26rpx;
+font-family: PingFang SC Medium, PingFang SC Medium-Medium;
+font-weight: 500;
+text-align: left;
+color: #666666;
+margin-left: 19rpx;
+}
+
+.page .list .check .txt text{
+  color: rgba(255,151,37,1);
+}
+
+.page .list .check  .ischeck{
+  background: linear-gradient(#ffa524 0%, #ff9225 100%);
+  border: 1rpx solid #ff9225;
+}
+
+.page .list .check  .nocheck{
+  background-color: white !important;
+  border: 1rpx solid #999;
+}
+
+.page .but{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 90rpx;
+
+
+}
+
+.page .but view{
+  width: 676rpx;
+  height: 100%;
+  border-radius: 44rpx;
+  background: linear-gradient(#ffa524 0%, #ff9225 100%);
+  text-align: center;
+  line-height: 90rpx;
+  color: white;
+}

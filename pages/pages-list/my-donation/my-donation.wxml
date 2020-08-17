@@ -1,0 +1,22 @@
+<!-- 我的捐赠页面 xw -->
+<view class="donation_content">
+	<view class="donation_list">
+		<scroll-view scroll-y="true" style="height: 100%;box-sizing: border-box;">
+		<view class="list_box" wx:for="{{10}}">
+			<view class="list_img">
+			<image src="{{baseurl}}/inv_bg_01.png" mode="" style="width: 100%;height: 100%;"></image>	
+			</view>
+			<view class="list_data">
+				<view class="list_name">今天请为天使点赞</view>
+				<view class="list_money">
+					<view class="money_cont">
+						<view class="money_num">筹款金额：<text style="color: #FF9525;">25800元</text></view>
+						<view class="money_num">已有助力者：<text style="color: #FF9525;">2552人</text></view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="nomore">{{nomore==1?'加载更多':nomore==2?'加载中...':'没有更多啦~'}}</view>
+		</scroll-view>
+	</view>
+</view>

@@ -1,0 +1,22 @@
+<!-- 客服中心中项目列表页面xw -->
+<view class="pro_content">
+	 <!-- 项目列表部分 -->
+	<scroll-view scroll-y="true" class="list_box">
+		<!-- 单个项目 -->
+		<view class="pro_box" wx:for="{{4}}" wx:key="index">
+		<view bindtap="goPage" data-index="{{index}}">
+			<view class="pro_img">
+				<!-- <image src="" mode="widthFix" style="width: 100%;height: 100%;"></image> -->
+			</view>
+			<view class="pro_item">
+				<view class="item_info">
+					<view class="pro_name">今天请为天使点赞</view>
+					<view class="pro_text">2020-8-6 10:45</view>
+				</view>
+				<view class="item_btn">查看项目</view>
+			</view>
+		</view>
+		</view>
+		<view class="nomore">{{nomore==1?'加载更多':nomore==2?'加载中...':'没有更多啦~'}}</view>
+	</scroll-view>
+</view>

@@ -1,0 +1,74 @@
+<!--pages/invite/invite.wxml-->
+<view class="page {{showSelect ? 'hid' : ''}}">
+
+	<view class="head">
+		<view class="inp" bindtap="toSearch">
+			<view></view>
+
+			<view class="icon">
+
+			</view>
+			<input maxlength='15' class="search_inp" placeholder-class="search_plainput" placeholder="你可以在这里进行搜索"></input>
+		</view>
+
+
+		<view class="list">
+
+			<view bindtap="toList">发起邀请捐</view>
+			<view bindtap="toList">直接捐赠</view>
+			<view>捐赠规则</view>
+
+		</view>
+
+		<view class="top">
+			<view bindtap="changeSelect" data-type='1'>全部邀请捐 <text class="{{ showSelect && select == 1 ? 'orangeIcon' : '' }}"></text></view>
+			<view bindtap="changeSelect" data-type='2'>全部队伍人数 <text  class="{{ showSelect && select == 2 ? 'orangeIcon' : '' }}" ></text></view>
+		</view>
+
+		<view class="line" wx:if="{{showSelect}}" style="background-image: url({{select == 1 ? 'https://img.vrupup.com/web/wyl/shanxing100/common/inv_bg_04.1.png' : 'https://img.vrupup.com/web/wyl/shanxing100/common/inv_bg_04.png'}});">
+		</view>
+
+		<view class="screen" wx:if="{{showSelect}}">
+
+			<view class="sxlist {{anmSelect == false ? 'hidden' : 'show'}}">
+				<view class="box {{selectIndex == index ? 'check' : ''}}" bindtap="changeIndex" data-ind="{{index}}" wx:for="{{leftList}}" wx:key="index">{{item}}</view>
+			</view>
+
+		</view>
+
+
+	</view>
+
+
+	<view class="grounpList">
+
+		<scroll-view scroll-y class="scroll">
+			<view class="box" wx:for="{{hotList}}" wx:key="id">
+
+				<view class="left">
+					<view class="icon">队伍</view>
+				</view>
+				<view class="right">
+					<view class="h3">{{item.title}}</view>
+					<view class="h4">
+						发起人: <text>{{item.peopleName}}</text>
+					</view>
+					<view class="bot">
+						<view class="lef">
+							<view class="h5">筹款金额：<text class="text">{{item.price}}元</text></view>
+							<view class="h5">已有助力者：<text class="text">{{item.people}}人</text> </view>
+						</view>
+						<view class="rig">加入邀请捐</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+
+
+
+
+
+	</view>
+
+
+</view>

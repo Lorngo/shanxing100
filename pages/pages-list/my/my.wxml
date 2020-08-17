@@ -1,0 +1,148 @@
+<!-- 个人中心页面xw -->
+<view class="info_box">
+<image src="{{baseurl}}/my/center_bg_03.png" mode="widthFix" class="page_bg"></image>
+<view class="info_cpnt">
+	<!-- 用户头像部分 -->
+	<view class="user_head">
+		<image src="{{baseurl}}/my/center_icon_01.png" class="head_img" mode="aspectFit"></image>
+	  <view class="user_info">
+			<view class="user_name">
+				<text class="names">一条小团团</text> 
+				<text class="user_grade">{{gradeList[0]}}</text>
+			</view>
+			<view class="article_line">
+				<view class="line_img">
+				<progress percent="20" border-radius="4rpx" stroke-width="4" activeColor="#ff9425" backgroundColor="#FFDFBE"></progress>
+				</view>
+				<view class="article_num">60/100</view>
+			</view>
+			<view class="artic_icon">
+				<image src="{{baseurl}}/my/center_01.png" mode="aspectFit" style="width: 60rpx;height: 20rpx;"></image>
+			</view>
+		</view>
+	</view>
+	<!-- 捐赠数据部分 -->
+	<view class="donate_data">
+		<view class="num_data">
+			<view class="num_top">25864</view>
+			<view class="num_bottom">共募善款(元)</view>
+		</view>
+		<view class="num_data">
+			<view class="num_top">1260</view>
+			<view class="num_bottom">我的捐赠(元)</view>
+		</view>
+		<view class="num_data">
+			<view class="num_top">1260</view>
+			<view class="num_bottom">支持项目(次)</view>
+		</view>
+	</view>
+</view>
+</view>
+<!-- 个人中心功能区 -->
+<view class="opera_cont">
+	<view class="opera_box" bindtap="goPages" data-url="../my-invite/my-invite">
+		<image mode="aspectFit" src="{{baseurl}}/my/center_icon_01.png" class="opera_icon"></image>
+		<view class="opera_text">我的邀请捐</view>
+	</view>
+	<view class="opera_box" bindtap="goPages" data-url="../my-donation/my-donation">
+		<image mode="aspectFit" src="{{baseurl}}/my/center_icon_02.png" class="opera_icon"></image>
+		<view class="opera_text">我的捐赠</view>
+	</view>
+	<view class="opera_box" bindtap="goPages" data-url="{{volunType}}">
+		<image mode="aspectFit" src="{{baseurl}}/my/center_icon_03.png" class="opera_icon"></image>
+		<view class="opera_text">{{volunType==1?'志愿者信息':'成为志愿者'}}</view>
+	</view>
+	<view class="opera_box" bindtap="goPages" data-url="../service-admin/service-admin">
+		<image mode="aspectFit" src="{{baseurl}}/my/center_icon_04.png" class="opera_icon"></image>
+		<view class="opera_text">客服管理</view>
+	</view>
+	<view class="opera_box" bindtap="goPages" data-url="../my-credent/my-credent">
+		<image mode="aspectFit" src="{{baseurl}}/my/center_icon_05.png" class="opera_icon"></image>
+		<view class="opera_text">我的证书</view>
+	</view>
+	<view class="opera_box" bindtap="goPages" data-url="../ranking/ranking?pagetype={{volunType}}">
+		<image mode="aspectFit" src="{{baseurl}}/my/center_icon_06.png" class="opera_icon"></image>
+		<view class="opera_text">排名</view>
+	</view>
+</view>
+<!-- 公益成就（勋章） -->
+<view class="achieve_cont">
+	<view class="achi_title">公益成就</view>
+	<view class="achieve_box">
+		<view class="medal_cont" bindtap="lookMedal">
+			 <!-- <view class="medal_show" style="background-image: url({{baseurl}}/medal/center/01.png);"></view> -->
+			 <view class="medal_show" style="background-image: url({{baseurl}}/medal/center/01.1.png);">
+				 <view class="start_box">
+					 <image wx:for="{{brightStar}}" mode="aspectFit" class="start_icon" src="{{baseurl}}/medal/center/07.png"></image>
+					 <image wx:for="{{darkStar}}" mode="aspectFit" class="start_icon" src="{{baseurl}}/medal/center/08.png"></image>
+				 </view>
+			 </view>
+			<view class="medal_text">捐赠新秀</view>
+		</view>
+		<view class="medal_cont">
+			 <view class="medal_show" style="background-image: url({{baseurl}}/medal/center/02.png);"></view>
+			 <!-- <view class="medal_show" style="background-image: url({{baseurl}}/medal/center/01.1.png);">
+				 <view class="start_box">
+					 <image wx:for="{{brightStar}}" mode="aspectFit" class="start_icon" src="{{baseurl}}/medal/center/07.png"></image>
+					 <image wx:for="{{darkStar}}" mode="aspectFit" class="start_icon" src="{{baseurl}}/medal/center/08.png"></image>
+				 </view>
+			 </view> -->
+			<view class="medal_text">善行先锋</view>
+		</view>
+		<view class="medal_cont">
+			 <view class="medal_show" style="background-image: url({{baseurl}}/medal/center/03.png);"></view>
+			 <!-- <view class="medal_show" style="background-image: url({{baseurl}}/medal/center/01.1.png);">
+				 <view class="start_box">
+					 <image wx:for="{{brightStar}}" mode="aspectFit" class="start_icon" src="{{baseurl}}/medal/center/07.png"></image>
+					 <image wx:for="{{darkStar}}" mode="aspectFit" class="start_icon" src="{{baseurl}}/medal/center/08.png"></image>
+				 </view>
+			 </view> -->
+			<view class="medal_text">步步为营</view>
+		</view>
+		<view class="medal_cont">
+			 <!-- <view class="medal_show" style="background-image: url({{baseurl}}/medal/center/01.png);"></view> -->
+			 <view class="medal_show" style="background-image: url({{baseurl}}/medal/center/04.4.png);">
+				 <view class="start_box">
+					 <image wx:for="{{3}}" mode="aspectFit" class="start_icon" src="{{baseurl}}/medal/center/07.png"></image>
+					 <!-- <image wx:for="{{darkStar}}" mode="aspectFit" class="start_icon" src="{{baseurl}}/medal/center/08.png"></image> -->
+				 </view>
+			 </view>
+			<view class="medal_text">一倡百和</view>
+		</view>
+		<view class="medal_cont">
+			 <!-- <view class="medal_show" style="background-image: url({{baseurl}}/medal/center/01.png);"></view> -->
+			 <view class="medal_show" style="background-image: url({{baseurl}}/medal/center/05.5.png);">
+				 <view class="start_box">
+					 <image wx:for="{{1}}" mode="aspectFit" class="start_icon" src="{{baseurl}}/medal/center/07.png"></image>
+					 <image wx:for="{{2}}" mode="aspectFit" class="start_icon" src="{{baseurl}}/medal/center/08.png"></image>
+				 </view>
+			 </view>
+			<view class="medal_text">乐善好施</view>
+		</view>
+		<view class="medal_cont">
+			 <view class="medal_show" style="background-image: url({{baseurl}}/medal/center/06.png);"></view>
+			 <!-- <view class="medal_show" style="background-image: url({{baseurl}}/medal/center/01.1.png);">
+				 <view class="start_box">
+					 <image wx:for="{{brightStar}}" mode="aspectFit" class="start_icon" src="{{baseurl}}/medal/center/07.png"></image>
+					 <image wx:for="{{darkStar}}" mode="aspectFit" class="start_icon" src="{{baseurl}}/medal/center/08.png"></image>
+				 </view>
+			 </view> -->
+			<view class="medal_text">善行勇者</view>
+		</view>
+	</view>
+</view>
+
+<!-- 勋章弹窗 -->
+<view class="medal_pup" hidden="{{isMedal}}">
+	<view class="medal_icon">
+		<image bindtap="closeModel" src="{{baseurl}}/common/close_btn.png" class="close_btn" mode="aspectFit"></image>
+	  <view class="medal_pups" style="background-image: url({{baseurl}}/medal/popup/01.1.png);">
+			<view class="pupstart_box">
+				<image wx:for="{{2}}" src="{{baseurl}}/medal/popup/07.png" class="pup_start" mode="aspectFit"></image>
+				<image wx:for="{{1}}" src="{{baseurl}}/medal/popup/08.png" class="pup_start" mode="aspectFit"></image>
+			</view>
+		</view>
+		<view class="pup_text">捐赠新秀</view>
+		<view class="medal_cond">每发起1次邀请捐，点亮一颗</view>
+	</view>
+</view>

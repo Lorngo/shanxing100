@@ -1,0 +1,83 @@
+<!--pages/pages-list/donate/donate.wxml-->
+<view class="page">
+	<view class="list">
+
+
+		<view class="box">
+			<view class="left">
+				邀请捐目标
+			</view>
+			<view class="right">
+				<input placeholder="(活动规定每个队伍的金额必须为200元)" placeholder-style="color:rgba(153,153,153,1)"></input>
+			</view>
+		</view>
+
+		<view class="box">
+			<view class="left">
+				邀请捐名称
+			</view>
+			<view class="right title">
+				今天请为天使点赞
+			</view>
+		</view>
+
+		<view class="box">
+			<view class="left">
+				邀请捐口号
+			</view>
+			<view class="right">
+				<input placeholder="献出一点爱心，收获一份真诚" placeholder-style="color:#333333"></input>
+			</view>
+		</view>
+
+		<view class="box">
+			<view class="left">
+				邀请捐项目
+			</view>
+
+			<picker range="{{pickerArr}}" value="{{pickerIndex}}" bindchange="pickerSelect">
+				<view class="right rightFlex">
+           <view class="smallBox">
+               <view class="txt" wx:if="{{pickerValue == ''}}">请选择项目</view>
+               <view class="txt" wx:if="{{pickerValue != ''}}">{{pickerValue}}</view>
+            <view class="icon"></view>
+           </view>
+         </view>
+			</picker>
+
+		</view>
+
+		<view class="image">
+			<view class="top">
+				邀请捐照片<text>（建议大小不超过2M，建议比例为横版比例）</text>
+			</view>
+
+			<view class="photo" bindtap="oploadImg">
+				<view class="box" wx:if="{{showImg == false}}" >
+					<view class="img"></view>
+					<view class="txt">上传照片</view>
+				</view>
+
+				<image src="{{donateImgurl}}" mode="aspectFill" wx:if="{{showImg}}"></image>
+			</view>
+		</view>
+
+
+		<view class="check">
+			<view class="icon {{checked == false ? 'nocheck' : 'ischeck'}}" bindtap="changeIcon">
+				<view></view>
+			</view>
+
+			<view class="txt">
+				我已经阅读并同意<text>《某某某协议》</text>
+			</view>
+		</view>
+
+
+
+	</view>
+
+	<view class="but">
+		<view bindtap="uploadbutton">确认上传</view>
+	</view>
+</view>

@@ -1,0 +1,96 @@
+<!--pages/index/index.wxml-->
+<view id="search">
+	<view class="inp" bindtap="toSearch">
+		<view></view>
+
+		<view class="icon">
+
+		</view>
+		<view class="txt">你可以在这里进行搜索</view>
+		<!-- <input maxlength='15' class="search_inp" placeholder-class="search_plainput" placeholder=""></input> -->
+	</view>
+
+	<view id="banner">
+
+		<swiper class="swiper" autoplay="true" indicator-dots='true' indicator-color='rgba(255,255,255,.6)' indicator-active-color='rgba(255,255,255,1)'>
+
+			<swiper-item wx:for="{{bannerList}}" wx:key="id">
+				<image src="{{item.imgUrl}}" aspect='aspectFill'></image>
+				{{index}}
+			</swiper-item>
+
+		</swiper>
+
+		<view id='go'>
+
+		</view>
+
+	</view>
+</view>
+
+
+
+
+<view id="xmlist">
+	<view class="bigBox">
+		<view class="title">项目图文介绍</view>
+
+		<view class="list">
+
+			<view class="box" wx:for="{{xmList}}" wx:key="id" bindtap="toxmDetail" data-id="{{item.id}}">
+				<view class="left">
+					<image src=""></image>
+				</view>
+
+				<view class="right">
+					<view class="h3">{{item.title}}</view>
+					<view class="h4">{{item.sub_title}}</view>
+					<view class="but">快来帮助小朋友吧！</view>
+					<view class="num">
+						<view class="lef">
+							筹款金额：
+							<text>{{item.price}}元</text>
+						</view>
+						<view class="rig">
+							在捐人数：
+							<text>{{item.people}}人</text>
+						</view>
+					</view>
+				</view>
+
+
+			</view>
+
+		</view>
+	</view>
+</view>
+
+<view id="groundlist">
+	<view class="bigBox">
+		<view class="title">捐赠小组</view>
+
+		<view class="list">
+
+			<view class="box" wx:for="{{groundList}}" wx:key = "id" >
+				<view class="left">
+					<image src=""></image>
+				</view>
+
+				<view class="right">
+					<view class="h3">{{item.title}}</view>
+					<view class="h4">{{item.sub_title}} </view>
+
+          <view class="bottom">
+               <view class="lef">
+                 组内人数： <text>{{item.people}}人</text>
+               </view>      
+               <view class="rig" bindtap="togroudDetail" data-id='{{item.id}}'>
+                 查看小组
+               </view>      
+          </view>
+				</view>
+
+			</view>
+	</view>
+</view>
+</view>

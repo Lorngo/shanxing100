@@ -1,0 +1,26 @@
+<!--components/toast.wxml-->
+
+
+<view class="page">
+	<view class="{{toastShow ? 'toast showToast' : 'hidToast'}}">
+		<view class="return" bindtap="return" wx:if="{{toastShow2}}">
+
+		</view>
+
+		<view class="h3"  wx:if="{{toastShow2}}">{{confimText.title}}</view>
+
+		<view class="txt"  wx:if="{{toastShow2}}">
+			<view class="text">{{confimText.main}}</view>
+		</view>
+
+		<view class="but" wx:if="{{confimText.type == 1 && toastShow2}}">
+			<view bindtap="onCancel" class="left">{{confimText.left}}</view>
+			<view bindtap="onConfirm" class="right">{{confimText.right}}</view>
+		</view>
+
+    <view class=" but2" wx:if="{{confimText.type == 2 && toastShow2}}">
+		   	<view bindtap="onCancel" class="left">{{confimText.mainbut}}</view>
+		</view>
+
+	</view>
+</view>

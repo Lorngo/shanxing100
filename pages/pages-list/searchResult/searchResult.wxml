@@ -1,0 +1,21 @@
+<!--pages/pages-list/searchResult/searchResult.wxml-->
+
+<view class="page">
+	<view class="head">
+		<view class="inp" bindtap="toSearch">
+			<view></view>
+
+			<view class="icon">
+
+			</view>
+			<input maxlength='15' class="search_inp" placeholder-class="search_plainput" placeholder="你可以在这里进行搜索"></input>
+		</view>
+
+     <myList class='list' list="{{hotList}}"></myList>
+
+	</view>
+
+
+ 
+
+</view>

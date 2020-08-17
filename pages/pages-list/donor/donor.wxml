@@ -1,0 +1,163 @@
+<!--pages/pages-list/donor/donor.wxml-->
+<view class="page">
+	<!-- 顶部卡片 -->
+	<view class="card">
+
+		<view class="top">
+			<view class="left">
+				<view>队伍</view>
+			</view>
+
+			<view class="right">
+				<view class="title">
+					<view>今天请为天使点赞</view>
+					<view>进行中</view>
+				</view>
+				<view class="sub_title">
+					发起人：<text>张三</text>
+				</view>
+
+				<view class="slogan">
+					邀请捐口号：<text>你守护世界，我们守护你！</text>
+				</view>
+			</view>
+		</view>
+		<view class="bottom">
+			<view class="title">
+				<view>邀请捐剩余时间</view>
+				<view>
+					<text>{{day}}</text>
+					天
+					<text>{{hour}}</text>
+					小时
+				</view>
+			</view>
+
+			<view class="list">
+				<view class="box">
+
+					<view class="num">
+						<view>25864</view>
+						<view>累计金额（元）</view>
+					</view>
+
+				</view>
+				<view class="box">
+					<view class="num">
+						<view>1260</view>
+						<view>已有助力者（人）</view>
+					</view>
+				</view>
+			</view>
+
+		</view>
+
+	</view>
+
+
+
+	<view class="donnor">
+
+		<view class="list">
+
+			<view class="sort">
+				<view class="{{sortCheck == true ? 'sortChange' : ''}}">
+					捐赠金额时间升序 <text></text>
+				</view>
+				<view class="{{sortCheck == false ? 'sortChange' : ''}}">
+					按照捐赠金额升序 <text></text>
+				</view>
+			</view>
+
+			<view class="user">
+
+				<view class="left">
+					<view class="icon">
+
+					</view>
+
+					<view class="txt">
+						<view class="title">
+							爱在日出前 <text>公益新秀</text>
+						</view>
+						<view class="txtIcon">
+							<view>已置顶</view>
+							<view>发起人</view>
+						</view>
+					</view>
+				</view>
+				<view class="right">
+
+					<view class="h3">
+						捐赠金额：<text>50元</text>
+					</view>
+					<view class="h4">
+						2020-01-01 10:12 加入小组
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+
+	<view class="peopleList" wx:if="{{peopleList.length != 0}}">
+		<view class="scrollList">
+			<scroll-view class="scroll" scroll-y wx:if="{{peopleList.length != 0}}" bindscrolltolower='scrollLower'>
+				<view class="box" wx:for="{{peopleList}}" wx:key="id">
+
+					<view class="left">
+						<view class="icon">
+							<image src="" mode="aspectFill"></image>
+							<view class="top" style="background-image: url('{{baseUrl}}/common/index_icon_06.png');" bindtap="toTop" data-id='{{item.id}}'>
+
+							</view>
+						</view>
+
+						<view class="txt">
+							<view class="title">
+								{{item.userName}} <text>{{item.leave >= 1 && item.leave <= 3 ? '公益新秀' : item.leave > 3 && item.leave <= 6 ? '乐于助人' : item.leave > 6 && item.leave <= 9 ? '古道热肠' : item.leave > 9 && item.leave <= 12 ? '乐善好施' : item.leave > 13 && item.leave <= 15 ? '积善成德' : item.leave > 15 && item.leave <= 19 ? '仁者爱人' : item.leave >= 20 ? '大爱无疆' : '' }}</text>
+							</view>
+							<view class="txtIcon">
+								<!-- <view>
+									已置顶
+									</view> -->
+								<view class="identity">{{item.identity}}</view>
+							</view>
+						</view>
+					</view>
+					<view class="right">
+
+						<view class="h3">
+							捐赠金额：<text>{{item.money}}元</text>
+						</view>
+						<view class="h4">
+							{{item.time}} 加入小组
+						</view>
+
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+		<!-- 底部按钮 -->
+		<view class="but">
+			<view bindtap="showToast">邀请助力者</view>
+		</view>
+
+	</view>
+
+	<view class="nothing" wx:if="{{peopleList.length == 0}}">
+		<view class="box">
+
+			暂时还没有其他助力者
+			分享你的邀请捐，邀请大家来助力吧！
+
+		</view>
+	</view>
+
+
+
+</view>
+
+<donnorToast bindtapReturn="return" bindtapCancel="onCancel" bindtapConfirm="onConfirm" wx:if="{{showToast}}"></donnorToast>
+
+<my-Toast wx:if="{{showsmallToast}}" bindtapReturn="returnsmall" bindtapCancel="cancelsmall" confimText="{{toastOptions.confimText}}"></my-Toast>

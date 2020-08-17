@@ -1,0 +1,36 @@
+<!-- 客服中心页面xw -->
+<view class="service_cont">
+<view class="service_top">
+	<view class="service_box" bindtap="goCall">
+		<image src="{{baseurl}}/service/center_icon_07.png" mode="aspectFit" class="ser_icon"></image>
+		<view class="ser_text">联系我们</view>
+	</view>
+	<view class="service_box" bindtap="goPage" data-url="../item-list/item-list">
+		<image src="{{baseurl}}/service/center_icon_08.png" mode="aspectFit" class="ser_icon"></image>
+		<view class="ser_text">项目介绍</view>
+	</view>
+	<view class="service_box" bindtap="goPage" data-url="">
+		<image src="{{baseurl}}/service/center_icon_09.png" mode="aspectFit" class="ser_icon"></image>
+		<view class="ser_text">关于我们</view>
+	</view>
+</view>
+<view class="gray_line"></view>
+<view class="issue_list">
+	<view class="issue_title">常见问题</view>
+	<scroll-view scroll-y="true" style="height: 100%">
+		<view class="issue_text" wx:for="{{15}}">
+			<view class="iss_title">为什么账号登录不上去？</view>
+			<view class="iss_content">可能是因为网络的原因可能是因为网络的原因</view>
+		</view>
+	</scroll-view>
+</view>
+</view>
+
+<!-- 联系我们弹窗 -->
+<view class="rela_box" wx:if="{{isCall}}">
+	<view class="phone_box">
+		<image bindtap="closePhone" src="{{baseurl}}/common/close_btn.png" mode="aspectFit" class="close_icon"></image>
+		<view class="phone_text">159-7316-3746</view>
+		<view class="call_btn" bindtap="goCallphone">拨打电话</view>
+	</view>
+</view>

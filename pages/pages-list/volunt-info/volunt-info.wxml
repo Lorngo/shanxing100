@@ -1,0 +1,61 @@
+<!--是志愿者时 我的信息页面xw -->
+<view class="volunt_cont">
+	<view class="volunt_box">
+		<view class="info_box">
+			<view class="info_title">小组名字</view>
+			<input type="text" disabled="{{isAlter}}" placeholder-class="place_color" maxlength="16" placeholder="请填写小组名字" class="info_input"/>
+		</view>
+		<view class="info_box">
+			<view class="info_title">用户名字<text style="color: #999999;font-size: 24rpx;">（个人名字无法修改）</text></view>
+			<input style="flex: 0.5;" disabled="true" type="text" maxlength="16" value="张三" class="info_input"/>
+		</view>
+		<view class="info_box">
+			<view class="info_title">手机</view>
+			<input type="number" disabled="{{isAlter}}" placeholder-class="place_color" maxlength="11" placeholder="请填写手机号" class="info_input"/>
+		</view>
+	</view>
+	<view class="volunt_box">
+		<view class="info_box">
+			<view class="info_title">邮箱</view>
+			<input type="text" disabled="{{isAlter}}" placeholder-class="place_color"  placeholder="请填写邮箱地址" class="info_input"/>
+		</view>
+		<view class="info_box">
+			<view class="info_title">省市区</view>
+			<picker disabled="{{isAlter}}" bindchange="changePick" data-type="3" mode="region" value="{{region}}">
+			    <view class="info_title" style="color: {{provinces?'':'#999'}};">
+				      {{provinces?provinces:'省-市-区'}}
+				  </view>
+			</picker>
+		</view>
+		<view class="info_box">
+			<view class="info_title">地址</view>
+			<input type="text" disabled="{{isAlter}}" placeholder-class="place_color" placeholder="请填写手机号" class="info_input"/>
+		</view>
+	</view>
+	<view class="volunt_box">
+		<view class="info_box">
+			<view class="info_title">选择学校</view>
+		<picker bindchange="changePick" disabled="{{isAlter}}" data-type="1" mode="selector" value="{{index}}" range="{{schooList}}">
+		    <view class="info_title" style="color: {{schoolname?'':'#999'}};">
+			      {{schoolname?schoolname:'请选择所在学校'}}
+			  </view>
+		</picker>
+		</view>
+		<view class="info_box">
+			<view class="info_title">社团</view>
+			<input disabled="{{isAlter}}" placeholder-class="place_color" type="text" placeholder="请填写社团名称" maxlength="16" class="info_input"/>
+		</view>
+		<view class="info_box">
+			<view class="info_title">身份</view>
+			<picker disabled="{{isAlter}}" bindchange="changePick" data-type="2" mode="selector" value="{{index}}" range="{{identList}}">
+			    <view class="info_title" style="color: {{identname?'':'#999'}};">
+				      {{identname?identname:'请选择当前身份'}}
+				  </view>
+			</picker>
+		</view>
+	</view>
+  <view class="volunt_btn">
+		<view class="btn_box1" bindtap="goBack">返回</view>
+		<view class="btn_box2" bindtap="goChange">修改</view>
+	</view>
+</view>

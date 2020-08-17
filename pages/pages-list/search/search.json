@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "myList" : "../../../components/searchList/searchList"
+  },
+  "navigationBarTitleText" : "搜索",
+  "navigationBarBackgroundColor" : "#fff",
+  "navigationBarTextStyle" : "black"
+}

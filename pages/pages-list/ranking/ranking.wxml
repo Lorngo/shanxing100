@@ -1,0 +1,77 @@
+<!-- 排名页面xw -->
+<view class="rank_cont" wx:if="{{type!=2}}">
+	<view class="rank_title"><text class="icon_top"></text>筹款</view>
+	<view class="rank_box">
+		<view class="data_cont">
+			<view class="data_num">50</view>
+			<view class="data_text">高校筹款(元)</view>
+		</view>
+    <view class="data_cont">
+    	<view class="data_num">50</view>
+    	<view class="data_text">小组筹款(元)</view>
+    </view>
+		<view class="data_cont">
+			<view class="data_num">50</view>
+			<view class="data_text">我的筹款(元)</view>
+		</view>
+	</view>
+</view>
+<view class="rank_cont">
+	<view class="rank_title"><text class="icon_top"></text>捐赠数据</view>
+	<view class="rank_box">
+		<view class="data_cont">
+			<view class="data_num">50</view>
+			<view class="data_text">全国捐赠总金额 (元)</view>
+		</view>
+    <view class="data_cont">
+    	<view class="data_num">50</view>
+    	<view class="data_text">参与捐赠总人数 (人)</view>
+    </view>
+		<view class="data_cont">
+			<view class="data_num">50</view>
+			<view class="data_text">全国共发起邀请捐次数(次)</view>
+		</view>
+	</view>
+</view>
+<view class="rank_cont" wx:if="{{type!=2}}">
+	<view class="rank_title"><text class="icon_top"></text>邀请捐排名</view>
+	<view class="rank_box">
+		<view class="data_cont">
+			<view class="data_num">50</view>
+			<view class="data_text">您所在的高校在全国排名</view>
+		</view>
+    <view class="data_cont">
+    	<view class="data_num">50</view>
+    	<view class="data_text">您所在的小组在全国排名</view>
+    </view>
+		<view class="data_cont">
+			<view class="data_num">50</view>
+			<view class="data_text">在您的高校里您的排名</view>
+		</view>
+		<view class="data_cont">
+			<view class="data_num">50</view>
+			<view class="data_text">我在全国排名</view>
+		</view>
+		<view class="data_cont">
+			<view class="data_num">50</view>
+			<view class="data_text">我在小组排名</view>
+		</view>
+	</view>
+</view>
+<view class="rank_cont" wx:if="{{type!=1}}">
+	<view class="rank_title"><text class="icon_top"></text>捐赠数据</view>
+	<view class="rank_box">
+		<view class="data_cont">
+			<view class="data_num">50</view>
+			<view class="data_text">全国捐赠总金额 (元)</view>
+		</view>
+    <view class="data_cont">
+    	<view class="data_num">50</view>
+    	<view class="data_text">参与捐赠总人数 (人)</view>
+    </view>
+		<view class="data_cont">
+			<view class="data_num">50</view>
+			<view class="data_text">全国共发起邀请捐次数(次)</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,89 @@
+<!--pages/pages-list/group/group.wxml-->
+<view class="page">
+
+	<!-- 轮播图 -->
+	<view class="banner">
+
+		<swiper class="swiper" autoplay indicator-dots indicator-color="rgba(255,255,255,.6)" indicator-active-color="rgba(255,255,255,1)">
+
+			<swiper-item wx:for="{{bannerList}}" wx:key="id">
+				<view class="img">
+					<image src="" mode="aspectFill"></image>
+					{{index}}
+				</view>
+			</swiper-item>
+
+		</swiper>
+
+	</view>
+
+	<!-- 小组数据 -->
+
+
+	<view class="group">
+		<view class="box">
+			<view class="top">
+				<view>
+					勇往直前不放弃组
+				</view>
+			</view>
+			<view class="bottom">
+				<view class="left">
+					<view class="smallbox">
+						<view>25864</view>
+						<view>累计金额 <text>(元)</text></view>
+					</view>
+				</view>
+				<view class="right">
+					<view class="smallbox">
+						<view>1260</view>
+						<view>已有成员 <text>(人)
+                      </text></view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 成员列表 -->
+		<view class="member">
+
+			<view class="title">
+				<view></view>
+				<view class="h3">
+					小组成员列表
+				</view>
+				<view></view>
+			</view>
+
+	<scroll-view scroll-y class="scroll" style="height:550rpx" bindscrolltolower="addDonor">
+			<view class="list">
+
+				<view class="box" wx:for="{{membersList}}" wx:key="id" bindtap="toDonor" data-join='{{item.join}}'>
+
+					<view class="left">
+						<view class="icon">
+							<!-- <image src="{{item.imgUrl}}" mode="aspectFill"></image> -->
+						</view>
+						<view class="txt">
+							<view class="top">
+								<view>{{item.title}} </view>
+								<text>{{item.leave >= 1 && item.leave <= 3 ? '公益新秀' : item.leave > 3 && item.leave <= 6 ? '乐于助人' : item.leave > 6 && item.leave <= 9 ? '古道热肠' : item.leave > 9 && item.leave <= 12 ? '乐善好施' : item.leave > 13 && item.leave <= 15 ? '积善成德' : item.leave > 15 && item.leave <= 19 ? '仁者爱人' : item.leave >= 20 ? '大爱无疆' : '' }}
+								</text>
+							</view>
+							<view class="bottom">{{item.time}} 加入小组</view>
+						</view>
+					</view>
+
+					<view class="right {{item.join == 1 ? '' : 'noJoin'}}">
+						{{item.join == 1 ? '邀请捐进行中' : '没有进行中'}}
+					</view>
+
+				</view>
+
+			</view>
+         	</scroll-view>
+		</view>
+
+
+</view>

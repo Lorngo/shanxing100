@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "donnorToast" : "/components/bigToast/bigToast",
+    "my-Toast" : "../../../components/toast/toast"
+  },
+  "navigationBarTitleText" : "邀请捐"
+}

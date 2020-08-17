@@ -1,0 +1,52 @@
+<!--pages/pages-list/search/search.wxml-->
+
+<view class="page">
+	<view class="head">
+		<view class="inp" bindtap="toSearch">
+			<view></view>
+
+			<view class="icon">
+
+			</view>
+			<input maxlength='15' class="search_inp" placeholder-class="search_plainput" placeholder="你可以在这里进行搜索"></input>
+		</view>
+
+		<view class="histroy" wx:if="{{showSearch}}">
+			<view class="h3">
+
+				<view>搜索历史</view>
+
+			</view>
+
+			<view class="list">
+				<view class="box" wx:for="{{hisList}}">
+					{{item}}
+				</view>
+			</view>
+		</view>
+
+		<view class="nothing" wx:if="{{showSearch == false}}">
+			<view class="box">
+				<view class="icon">
+				</view>
+
+				<view class="txt">
+					<view> 没有搜索到你心意的邀请捐</view>
+					<view>可以返回首页发起属于你自己的邀请捐</view>
+				</view>
+			</view>
+		</view>
+
+	</view>
+
+	<view class="hotList">
+		<view class="title">
+
+			<view>热门推荐</view>
+
+		</view>
+
+	   <myList list="{{hotList}}"></myList>
+	</view>
+
+</view>

@@ -1,0 +1,25 @@
+<!--components/searchList/searchList.wxml-->
+
+
+	<view class="list">
+			<view class="box" wx:for="{{list}}" wx:key="id">
+
+				<view class="left">
+					<view class="icon">队伍</view>
+				</view>
+				<view class="right">
+					<view class="h3">{{item.title}}</view>
+					<view class="h4">
+						发起人: <text>{{item.peopleName}}</text>
+					</view>
+					<view class="bot">
+						<view class="lef">
+							<view class="h5">筹款金额：<text class="text">{{item.price}}元</text></view>
+							<view class="h5">已有助力者：<text class="text">{{item.people}}人</text> </view>
+						</view>
+						<view class="rig">加入邀请捐</view>
+					</view>
+				</view>
+			</view>
+	</view>
+

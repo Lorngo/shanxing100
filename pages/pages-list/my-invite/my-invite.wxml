@@ -1,0 +1,44 @@
+<!-- 我的邀请捐页面  xw -->
+<!-- 顶部数据展示 -->
+<view class="invite_content">
+<view class="invite_head">
+	<image src="{{baseurl}}/my/center_bg_03.png" mode="widthFix" class="top_img"></image>
+  <view class="invite_box">
+		<view class="invite_data">
+			<view class="data_num">25899</view>
+			<view class="data_text">发起邀请捐(次)</view>
+		</view>
+		<view class="invite_data">
+			<view class="data_num">656</view>
+			<view class="data_text">参与成员(人)</view>
+		</view>
+		<view class="invite_data">
+			<view class="data_num">25899</view>
+			<view class="data_text">共募善款(元)</view>
+		</view>
+	</view>
+</view>
+<!-- 我的邀请列表 -->
+<view class="invite_list">
+	<scroll-view scroll-y="true" style="height: 100%;box-sizing: border-box;">
+	<view class="list_box" wx:for="{{10}}">
+		<view class="list_img">
+		<view class="tip_box">队伍</view>
+		<image src="{{baseurl}}/inv_bg_01.png" mode="" style="width: 100%;height: 100%;"></image>	
+		</view>
+		<view class="list_data">
+			<view class="list_name">今天请为天使点赞</view>
+			<view class="initia">发起人：张三</view>
+			<view class="list_money">
+				<view class="money_cont">
+					<view class="money_num">筹款金额：<text style="color: #FF9525;">25800元</text></view>
+					<view class="money_num">已有助力者：<text style="color: #FF9525;">2552人</text></view>
+				</view>
+				<view class="look_btn">查看邀请捐</view>
+			</view>
+		</view>
+	</view>
+	<view class="nomore">{{nomore==1?'加载更多':nomore==2?'加载中...':'没有更多啦~'}}</view>
+	</scroll-view>
+</view>
+</view>

@@ -1,0 +1,45 @@
+<!-- 详情内容 xw-->
+<view class="detail_cont">
+	<image src="{{baseurl}}/inv_bg_01.png" mode="widthFix" class="detail_img"></image>
+  <text class="detail_title">今天请为天使点赞</text>
+	<view class="detail_text">资助社会福利事业。企业选择对各种慈善事业、社会福利事,赞助文化教育事业。文化教育事业是一个国家的立国之本，中国资助社会福利事业。企业选择对各种慈善事业、社会福利事</view>
+  <image src="{{baseurl}}/inv_bg_01.png" mode="widthFix" class="detail_img"></image>
+  <text class="detail_title">今天请为天使点赞</text>
+  <view class="detail_text">资助社会福利事业。企业选择对各种慈善事业、社会福利事,赞助文化教育事业。文化教育事业是一个国家的立国之本，中国资助社会福利事业。企业选择对各种慈善事业、社会福利事</view>
+</view>
+<!-- 底部操作按钮 -->
+<view class="bottom_btn">
+	<view class="addBtn">
+		捐赠数量：
+		<image bindtap="operaData" data-types="1" class="suba_icon" mode="aspectFit" src="{{baseurl}}{{type==1?'/project/sub_1.png':'/project/sub_2.png'}}"></image>
+	  <text class="don_num">{{pronum}}</text>
+		<image bindtap="operaData" data-types="2" class="suba_icon" mode="aspectFit" src="{{baseurl}}{{type==2?'/project/add_1.png':'/project/add_2.png'}}"></image>
+	</view>
+	<view class="don_money">
+		捐赠金额：
+		<text class="money_num">25024元</text>
+	</view>
+	<view class="donate_btn" bindtap="goDona" data-type='1'>
+		捐赠
+	</view>
+</view>
+<!-- 捐赠金额的选择弹窗 -->
+<view class="dona_bg" hidden="{{isMoney}}">
+	<view class="dona_box">
+		<image class="close_icon" bindtap="goDona" data-type='2' mode="aspectFit" src="{{baseurl}}/common/close_btn.png"></image>
+		<view class="dona_text">选择金额</view>
+		<view class="money_box">
+			<view class="mon_cont {{moneyIndex==1?'active':''}}" bindtap="chooseMon" data-key='1' data-nums="10">10</view>
+			<view class="mon_cont {{moneyIndex==2?'active':''}}" bindtap="chooseMon" data-key='2' data-nums="100">100</view>
+			<view class="mon_cont {{moneyIndex==3?'active':''}}" bindtap="chooseMon" data-key='3' data-nums="800">800</view>
+			<view class="mon_cont {{moneyIndex==4?'active':''}}" bindtap="chooseMon" data-key='4' data-nums="100">10</view>
+		</view>
+		<view class="dona_text">自定义金额<text style="color: #999999;font-size: 24rpx;font-weight: 100;">（输入金额为整数）</text></view>
+		<input type="number" bindinput="getCustom" class="other_money" maxlength="8"/>
+		<view class="protocol">
+			<image bindtap="goAgeen" src="{{baseurl}}{{flag?'/common/index_icon_02.png':'/common/index_icon_02.1.png'}}" mode="aspectFit" class="choose_icon"></image>
+		   我已经阅读并同意<text style="color: #FF9725;">《某某某协议》</text>
+		</view>
+		<view class="dona_btn" bindtap="goPay">确定</view>
+	</view>
+</view>

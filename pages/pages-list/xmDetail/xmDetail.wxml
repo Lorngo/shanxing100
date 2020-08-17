@@ -1,0 +1,37 @@
+<!--pages/pages-list/xmDetail/xmDetail.wxml-->
+<view class="head">
+
+   <view class="head_img">
+      <image src="" mode="aspectFill"></image>
+   </view>
+
+    <view class="num">
+       <view class="box">
+          <view class="left">
+           筹款金额： <text>25800元</text>
+          </view>
+          <view class="right">
+           在捐人数： <text>2552人</text>
+          </view>
+       </view>
+    </view>
+
+</view>
+
+
+<view class="txt">
+   
+</view>
+
+
+<view class="bottom">
+   <view class="top">本次捐赠进发生在小程序中，不通过其他的方式进行</view>
+  <view class="but">
+     <view class="box">
+        <view bindtap="toDonate">发起邀请捐</view>
+        <view bindtap="donation">直接捐赠</view>
+     </view>
+  </view>
+</view>
+
+<my-Toast wx:if="{{toastShow}}" bindtapConfirm='confirm' bindtapReturn='return'  bindtapCancel="cancel"  confimText="{{toastOptions.confimText}}"></my-Toast>
