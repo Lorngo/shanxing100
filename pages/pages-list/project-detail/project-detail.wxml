@@ -1,11 +1,12 @@
 <!-- 详情内容 xw-->
 <view class="detail_cont">
-	<image src="{{baseurl}}/inv_bg_01.png" mode="widthFix" class="detail_img"></image>
-  <text class="detail_title">今天请为天使点赞</text>
-	<view class="detail_text">资助社会福利事业。企业选择对各种慈善事业、社会福利事,赞助文化教育事业。文化教育事业是一个国家的立国之本，中国资助社会福利事业。企业选择对各种慈善事业、社会福利事</view>
-  <image src="{{baseurl}}/inv_bg_01.png" mode="widthFix" class="detail_img"></image>
-  <text class="detail_title">今天请为天使点赞</text>
-  <view class="detail_text">资助社会福利事业。企业选择对各种慈善事业、社会福利事,赞助文化教育事业。文化教育事业是一个国家的立国之本，中国资助社会福利事业。企业选择对各种慈善事业、社会福利事</view>
+	<view class="text_cont" wx:for="{{detailData.content}}" wx:key="{{index}}">
+		<view class="detail_text {{item.indent==1?'text2':item.indent==2?'text1':''}}" wx:if="{{item.type=='text'}}">
+			{{item.value}}
+		</view>
+		<image src="{{item.value}}" mode="widthFix" wx:if="{{item.type=='img'}}" class="detail_img"></image>
+		<video src="{{item.value}}" class="video_cont" controls="false" wx:if="{{item.type=='video'}}"></video>
+	</view>
 </view>
 <!-- 底部操作按钮 -->
 <view class="bottom_btn">
@@ -17,14 +18,14 @@
 	</view>
 	<view class="don_money">
 		捐赠金额：
-		<text class="money_num">25024元</text>
+		<text class="money_num">{{detailData.price*pronum}}元</text>
 	</view>
 	<view class="donate_btn" bindtap="goDona" data-type='1'>
 		捐赠
 	</view>
 </view>
 <!-- 捐赠金额的选择弹窗 -->
-<view class="dona_bg" hidden="{{isMoney}}">
+<!-- <view class="dona_bg" hidden="{{isMoney}}">
 	<view class="dona_box">
 		<image class="close_icon" bindtap="goDona" data-type='2' mode="aspectFit" src="{{baseurl}}/common/close_btn.png"></image>
 		<view class="dona_text">选择金额</view>
@@ -42,4 +43,4 @@
 		</view>
 		<view class="dona_btn" bindtap="goPay">确定</view>
 	</view>
-</view>
+</view> -->

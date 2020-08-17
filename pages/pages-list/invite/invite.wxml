@@ -16,7 +16,7 @@
 
 			<view bindtap="toList">发起邀请捐</view>
 			<view bindtap="toList">直接捐赠</view>
-			<view>捐赠规则</view>
+			<view bindtap="toxmRule">捐赠规则</view>
 
 		</view>
 

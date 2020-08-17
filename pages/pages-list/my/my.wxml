@@ -16,9 +16,9 @@
 				</view>
 				<view class="article_num">60/100</view>
 			</view>
-			<view class="artic_icon">
-				<image src="{{baseurl}}/my/center_01.png" mode="aspectFit" style="width: 60rpx;height: 20rpx;"></image>
-			</view>
+			<!-- <view class="artic_icon"> -->
+				<image src="{{baseurl}}/lv/lv1.png" mode="aspectFit" class="artic_icon"></image>
+			<!-- </view> -->
 		</view>
 	</view>
 	<!-- 捐赠数据部分 -->

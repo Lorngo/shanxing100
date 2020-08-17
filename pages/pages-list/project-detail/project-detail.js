@@ -1,29 +1,53 @@
 let app = new getApp()
+import api from '../../../utils/api/api'
+import tool from '../../../utils/publics/tool.js'
 Page({
   data: {
     baseurl:app.globalData.ASSETSURL,
 		pronum:0,//加减的数量
 		type:0,//1减 2加
-		proIndex:-1,//操作的项目序号
+		id:'',//项目id
 		moneyIndex:1,
-		flag:false,//是否同意
-		isMoney:true,//是否显示金额选择弹窗,默认隐藏
-		money:10//捐赠的金额
+		// flag:false,//是否同意
+		// isMoney:true,//是否显示金额选择弹窗,默认隐藏
+		money:10,//捐赠的金额
+		detailData:{}//详情信息
   },
   onLoad: function (res) {
    this.setData({
-		 pronum:res.num
+		 pronum:res.num,
+		 id:res.id
 	 })
+	 this.getDetail()
   },
   onShow: function () {
 
   },
-	//同意协议
-	goAgeen(){
-		this.setData({
-			flag:!this.data.flag
+	//获取项目详情
+	getDetail(){
+		let upData = {
+			goods_id:this.data.id
+		}
+		tool.loading()
+		api.getProdetail(upData).then(res => {
+			console.log('项目详情：',res.data.data);
+			tool.loading_h()
+			if(res.data.code==1)
+			{
+				this.setData({
+					detailData:res.data.data
+				})
+			}else{
+				tool.alert(res.data.msg)
+			}
 		})
 	},
+	//同意协议
+	// goAgeen(){
+	// 	this.setData({
+	// 		flag:!this.data.flag
+	// 	})
+	// },
 	//加减操作
 	operaData(e){
 		let types = e.currentTarget.dataset.types
@@ -48,54 +72,66 @@ Page({
 		}
 	},
 	//获取自定义的金额数
-	getCustom(e){
-	 let num = e.detail.value
-	 this.setData({
-		 moneyIndex:0,
-		 money:num
-	 })
-	},
+	// getCustom(e){
+	//  let num = e.detail.value
+	//  this.setData({
+	// 	 moneyIndex:0,
+	// 	 money:num
+	//  })
+	// },
 	//捐赠
 	goDona(e){
-		let type = e.currentTarget.dataset.type
-		//type=1 捐赠弹窗显示  2  隐藏
-		if(type==1)
-		{
-			this.setData({
-				isMoney:false
-			})
-		}else
-		{
-			this.setData({
-				isMoney:true
-			})
+		let updata = {
+			goods_id:this.data.id,
+			is_team:0,
+			order_id:'',
+			number:this.data.pronum
 		}
+		tool.loading()
+		api.goDonate(updata).then(res=>{
+		tool.loading_h()
+			console.log("调起支付:",res);
+		})
+		// let type = e.currentTarget.dataset.type
+		// //type=1 捐赠弹窗显示  2  隐藏
+		// if(type==1)
+		// {
+		// 	this.setData({
+		// 		isMoney:false
+		// 	})
+		// }else
+		// {
+		// 	this.setData({
+		// 		isMoney:true
+		// 	})
+		// }
+		
 	},
 	//选择金额
-	chooseMon(e){
-		let keys = e.currentTarget.dataset.key
-		let nums = e.currentTarget.dataset.nums
-		this.setData({
-			moneyIndex:keys,
-			money:nums
-		})
-	},
+	// chooseMon(e){
+	// 	let keys = e.currentTarget.dataset.key
+	// 	let nums = e.currentTarget.dataset.nums
+	// 	this.setData({
+	// 		moneyIndex:keys,
+	// 		money:nums
+	// 	})
+	// },
 	//确认捐赠
-	goPay(){
-		if(this.data.money=='')
-		{
-			wx.showToast({
-				title:'还未选择捐赠的金额噢',
-				icon:'none'
-			})
-			return
-		}else if(!this.data.flag)
-		{
-			wx.showToast({
-				title:'请同意并勾选协议',
-				icon:'none'
-			})
-			return
-		}
-	}
+	// goPay(){
+	// 	if(this.data.money=='')
+	// 	{
+	// 		wx.showToast({
+	// 			title:'还未选择捐赠的金额噢',
+	// 			icon:'none'
+	// 		})
+	// 		return
+	// 	}else if(!this.data.flag)
+	// 	{
+	// 		wx.showToast({
+	// 			title:'请同意并勾选协议',
+	// 			icon:'none'
+	// 		})
+	// 		return
+	// 	}
+	// }
 })

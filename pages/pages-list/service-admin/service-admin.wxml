@@ -9,7 +9,7 @@
 		<image src="{{baseurl}}/service/center_icon_08.png" mode="aspectFit" class="ser_icon"></image>
 		<view class="ser_text">项目介绍</view>
 	</view>
-	<view class="service_box" bindtap="goPage" data-url="">
+	<view class="service_box" bindtap="goPage" data-url="../xmRule/xmRule?type=2">
 		<image src="{{baseurl}}/service/center_icon_09.png" mode="aspectFit" class="ser_icon"></image>
 		<view class="ser_text">关于我们</view>
 	</view>

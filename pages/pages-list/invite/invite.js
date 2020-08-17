@@ -73,6 +73,10 @@ Page({
   toList() {
     tool.jump_nav('/pages/pages-list/xmList/xmList')
   },
+	//前往捐赠规则
+	toxmRule(){
+		tool.jump_nav('/pages/pages-list/xmRule/xmRule?type=1')
+		},
   //切换下拉框下标
   changeIndex(e) {
     var index = e.currentTarget.dataset.ind

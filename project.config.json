@@ -147,6 +147,19 @@
 					"pathName": "components/toast/toast",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/pages-list/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "项目列表",
+					"pathName": "pages/pages-list/project/project",
+					"scene": null
 				}
 			]
 		}

@@ -39,7 +39,10 @@ const getJoinVoIPChatSignature = (data, url = '/api/oauth/encrypt') => { return 
 const getImage = (data, url = 'api/banner/get_banner') => { return myRequest(data, url) }
 //项目列表
 const getXmlist = (data, url = 'api/goods/goods_list') => { return myRequest(data, url) }
-
+//项目详情
+const getProdetail = (data, url = 'api/goods/goods_detail') => { return myRequest(data, url) }
+//项目详情内发起捐赠
+const goDonate  = (data, url = 'api/order/submit_order') => { return myRequest(data, url) }
 
 module.exports = {
   myRequest,
@@ -52,5 +55,7 @@ module.exports = {
   requestSubscribeMessage,
   getJoinVoIPChatSignature,
   getImage,
-  getXmlist
+  getXmlist,
+	getProdetail,
+	goDonate
 }

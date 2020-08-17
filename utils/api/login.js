@@ -76,14 +76,11 @@ const _request = (data, url) => {
   }
     wx.login({
         success: res => {
-            data.js_code = res.code;
-            console.log('0000000000')                                               
+            data.js_code = res.code;                                             
             _http[`${'post'}P`](_url, data).then(res => {
-              console.log('11111111')
               if(res.data.code==1){
                 resolve(res.data.data);
-                console.log('123123123123123')
-                wx.setStorageSync("APPTOKEN", res.data.data);
+                wx.setStorageSync("APPTOKEN", res.data.data.user_info);
                 glb.APPTOKEN = res.data.data;
               }else{
                tool.alert(res.data.msg)

@@ -1,18 +1,18 @@
 let app = new getApp()
 import api from '../../../utils/api/api'
+import tool from '../../../utils/publics/tool.js'
 Page({
   data: {
     baseurl:app.globalData.ASSETSURL,
-		nomore:3,//1=加载更多 2=加载中 3=暂无数据
-		pronumList:[3,1,1,1],//加减的数量
+		nomore:1,//1=加载更多 2=加载中 3=暂无数据
+		page:1,//页数
+		limit:10,//每页展示的条数
+		pronumList:[],//项目列表
 		type:0,//1减 2加
 		proIndex:-1//操作的项目序号
   },
   onLoad: function (options) {
-		
-			
-		this.getXmlist()
-
+	  this.getXmlist()
   },
   onShow: function () {
 
@@ -25,45 +25,84 @@ Page({
 			proIndex:key,
 			type:types
 		})
+		//单价
+		let unit = this.data.pronumList[key].price
+		let nums = 'pronumList['+key+'].num'
+		let total = 'pronumList['+key+'].total'
 		//types=1 减 =2 加
-		if(this.data.pronumList[key]>1&&types==1)
+		if(this.data.pronumList[key].num>1&&types==1)
 		{
-			let num = this.data.pronumList[key]
+			let num = this.data.pronumList[key].num
 			num-- 
-			let nums = 'pronumList['+key+']'
 			this.setData({
-				[nums]:num
+				[nums]:num,
+				[total]:num*unit
 			})
 		}else if(types==2)
 		{
-			let num = this.data.pronumList[key]
+			let num = this.data.pronumList[key].num
 			num++
-			let nums = 'pronumList['+key+']'
 			this.setData({
-				[nums]:num
+				[nums]:num,
+				[total]:num*unit
 			})
+			console.log(this.data.pronumList);
 		}
 	},
 	//跳转详情
 	goPage(e){
-		let key = e.currentTarget.dataset.index
+		let num = e.currentTarget.dataset.num
+		let id = e.currentTarget.dataset.id
 		wx.navigateTo({
-			url:'../project-detail/project-detail?num='+this.data.pronumList[key]
+			url:'../project-detail/project-detail?num='+num+'&id='+id
 		})
 	},
-
+	//上拉加载
+  lowerData(){
+		console.log('6');
+		this.getXmlist()
+	},
 	//获取项目列表
 	getXmlist(){
-		var data = {
-			 page : 1
+    let upData = {
+			page:this.data.page,
+			limit:this.data.limit
 		}
-
-		api.getXmlist(data).then(res => {
-			if(res.data.code == 1){
-				console.log('项目列表的值=====',res.data.data)
-			}else{
-				console.log('项目列表错误信息======',res.data.msg)
-			}
-		})
+		if(this.data.nomore==1)
+		{
+			this.setData({
+				nomore:2
+			})
+			api.getXmlist(upData).then(res => {
+				if(res.data.code == 1){
+					console.log('项目列表:',res.data.data)
+					let list = res.data.data.list
+					for(let i=0,len=list.length;i<len;i++)
+					{
+						list[i].num = 1
+						list[i].total = list[i].price
+					}
+					this.setData({
+						page:this.data.page + 1,
+						pronumList:this.data.pronumList.concat(list)
+					})
+					if(list.length<10)
+					{
+						this.setData({
+							nomore:3
+						})
+					}else{
+						this.setData({
+							nomore:1
+						})
+					}
+				}else{
+					tool.alert(res.data.msg)
+					this.setData({
+						nomore:3
+					})
+				}
+			})
+		}
 	}
 })

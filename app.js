@@ -19,7 +19,7 @@ App({
   globalData: {
     CONFIGURE: "tJ4GXH2P2luArDVm0u9",//核弹系统码
     BGMURL: 'https://game.flyh5.cn/resources/game/wechat/szq/ftxiyouji/images/music.mp3',//背景音乐音频地址
-    REQUESTURL: 'https://game.vrupup.com/sanguo/yangyuntian/applet/iframe2/public/',//接口请求路径
+    REQUESTURL: 'https://game.vrupup.com/sanguo/yangyuntian/applet/good100/public/',//接口请求路径
     ASSETSURL: 'https://img.vrupup.com/web/wyl/shanxing100'//线上资源路径
   }
 })
