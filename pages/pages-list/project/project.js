@@ -3,7 +3,7 @@ import api from '../../../utils/api/api'
 import tool from '../../../utils/publics/tool.js'
 Page({
   data: {
-    baseurl:app.globalData.ASSETSURL,
+    baseurl:app.store.$state.ASSETSURL,
 		nomore:1,//1=加载更多 2=加载中 3=暂无数据
 		page:1,//页数
 		limit:10,//每页展示的条数

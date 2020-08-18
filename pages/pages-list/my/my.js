@@ -1,7 +1,7 @@
 let app = new getApp()
 Page({
   data: {
-   baseurl:app.globalData.ASSETSURL,
+   baseurl:app.store.$state.ASSETSURL,
 	 gradeList:['公益新秀','乐于助人','古道热肠','乐善好施','积善成德','仁者爱人','大爱无疆'],
    volunType:2,//判断是否是志愿者 1是  2不是
 	 brightStar:[1,2],//亮的星星数

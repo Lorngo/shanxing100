@@ -1,3 +1,0 @@
-/* pages/pages-list/star-score/star-score.wxss */
-.score{margin-top: 40rpx;}
-.score text{font-size: 60rpx;color:#FF5500;margin:0 20rpx;}

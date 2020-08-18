@@ -1,3 +1,0 @@
-/* pages/pages-list/computed-watch/computed-watch.wxss */
-.body{font-size: 50rpx;}
-.num{padding:30rpx 0;}

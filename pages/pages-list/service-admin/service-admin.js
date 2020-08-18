@@ -1,7 +1,7 @@
 let app = new getApp()
 Page({
 	data: {
-		baseurl: app.globalData.ASSETSURL,
+		baseurl: app.store.$state.ASSETSURL,
 		isCall:false//联系我们的弹窗,默认关闭
 	},
 

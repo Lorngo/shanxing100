@@ -151,8 +151,8 @@ const jump_swi = (url) => {
   })
 }
 //返回上一页面
-const jump_back = () => {
-  wx.navigateBack()
+const jump_back = (delta) => {
+  wx.navigateBack({ delta })
 }
 //本地缓存
 const storage = (key, value) => {

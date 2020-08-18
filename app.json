@@ -1,166 +1,68 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/pages-list/invite/invite",
-    "pages/pages-list/project/project",
-    "pages/pages-list/my/my",
-    "pages/pages-list/xmDetail/xmDetail",
-    "pages/pages-list/register/register",
-    "pages/pages-list/donate/donate",
-    "pages/pages-list/search/search",
-    "pages/pages-list/searchResult/searchResult",
-    "pages/pages-list/group/group",
-    "pages/pages-list/donor/donor",
-    "pages/pages-list/xmList/xmList",
-    "pages/pages-list/xmRule/xmRule",
-    "pages/pages-list/project-detail/project-detail",
-		"pages/pages-list/my-invite/my-invite",
-		"pages/pages-list/my-donation/my-donation",
-		"pages/pages-list/volunt-info/volunt-info",
-		"pages/pages-list/signup/signup",
-		"pages/pages-list/service-admin/service-admin",
-		"pages/pages-list/my-credent/my-credent",
-		"pages/pages-list/ranking/ranking",
-		"pages/pages-list/item-list/item-list"
-  ],
-  "subpackages": [
-    {
-      "root": "subpackagesA",
-      "pages": [
-        "authorize/authorize",
-        "get-phone/get-phone",
-        "location/location",
-        "poster/poster",
-        "webview/webview",
-        "codes/codes",
-        "calendar/index",
-        "html/html",
-        "shake/shake",
-        "calendar/calendars/calendar",
-        "calendar/calendarTemplate/index",
-        "calendar/datepickerTemplate/index",
-        "calendar/calendar/index",
-        "circle/circle",
-        "star-score/star-score",
-        "prize/index",
-        "prize/disk/disk",
-        "prize/disks/disks",
-        "prize/horse/horse",
-        "map/index",
-        "map/my-map/index",
-        "map/maps/maps",
-        "websocket/websocket",
-        "ar/ar",
-        "img-code/img-code",
-        "computed-watch/computed-watch",
-        "ch-en/ch-en",
-        "sequence/sequence",
-        "custom/custom",
-        "swiper3d/swiper3d",
-        "scroll-show/scroll-show",
-        "handwriting/handwriting",
-        "robot/robot",
-        "panorama/panorama",
-        "cropper/cropper",
-        "prize/scrape/scrape",
-        "sliding-del/sliding-del",
-        "index-list/index-list",
-        "slider/slider",
-        "parabola/parabola",
-        "wx-charts/index/index",
-        "live/index",
-        "live/live-dev/live-play",
-        "live/live-dev/live-pusher",
-        "live/live-room/live-room",
-        "prize/tiger/tiger",
-        "werun/werun",
-        "chat/index",
-        "chat/txim/index",
-        "chat/txim/main/index",
-        "countUp/countUp",
-        "touch-event/touch-event",
-        "audio/audio",
-        "move/move",
-        "wxministore/wxministore",
-        "chat/research/research",
-        "calendar/my-calendar/my-calendar",
-        "live/voip-room/voip-room",
-        "wx-validate/wx-validate"
-      ]
-    },
-    {
-      "root": "subpackagesB",
-      "pages": [
-        "shop/cart/cart",
-        "shop/index",
-        "shop/order/order"
-      ]
-    }
+   "pages/index/index",
+   "pages/pages-list/invite/invite",
+   "pages/pages-list/project/project",
+   "pages/pages-list/my/my",
+   "pages/pages-list/xmDetail/xmDetail",
+   "pages/pages-list/register/register",
+   "pages/pages-list/donate/donate",
+   "pages/pages-list/search/search",
+   "pages/pages-list/searchResult/searchResult",
+   "pages/pages-list/group/group",
+   "pages/pages-list/donor/donor",
+   "pages/pages-list/xmList/xmList",
+   "pages/pages-list/xmRule/xmRule",
+   "pages/pages-list/project-detail/project-detail",
+   "pages/pages-list/my-invite/my-invite",
+   "pages/pages-list/my-donation/my-donation",
+   "pages/pages-list/volunt-info/volunt-info",
+   "pages/pages-list/signup/signup",
+   "pages/pages-list/service-admin/service-admin",
+   "pages/pages-list/my-credent/my-credent",
+   "pages/pages-list/ranking/ranking",
+   "pages/pages-list/item-list/item-list"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "善行公益",
-    "navigationBarTextStyle": "black"
+   "backgroundTextStyle": "light",
+   "navigationBarBackgroundColor": "#fff",
+   "navigationBarTitleText": "善行公益",
+   "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
   },
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "./assets/img/index_icon_01.png",
-        "selectedIconPath": "./assets/img/index_icon_01.1.png"
-      },
-      {
-        "pagePath": "pages/pages-list/invite/invite",
-        "text": "邀请捐",
-        "iconPath": "./assets/img/index_icon_02.1.png",
-        "selectedIconPath": "./assets/img/index_icon_02.png"
-      },
-      {
-        "pagePath": "pages/pages-list/project/project",
-        "text": "项目列表",
-        "iconPath": "./assets/img/index_icon_03.png",
-        "selectedIconPath": "./assets/img/index_icon_03.1.png"
-      },
-      {
-        "pagePath": "pages/pages-list/my/my",
-        "text": "我的",
-        "iconPath": "./assets/img/index_icon_04.png",
-        "selectedIconPath": "./assets/img/index_icon_04.1.png"
-      }
-    ],
-    "color": "#666666",
-    "selectedColor": "#FF9525"
-  },
-  "navigateToMiniProgramAppIdList": [
-    "wx5f891ae8337b8324",
-    "wx9db2c16d0633c2e7",
-    "wxec482d13249feff9"
-  ],
+	"tabBar": {
+	  "list": [
+	    {
+	      "pagePath": "pages/index/index",
+	      "text": "首页",
+	      "iconPath": "./assets/img/index_icon_01.png",
+	      "selectedIconPath": "./assets/img/index_icon_01.1.png"
+	    },
+	    {
+	      "pagePath": "pages/pages-list/invite/invite",
+	      "text": "邀请捐",
+	      "iconPath": "./assets/img/index_icon_02.1.png",
+	      "selectedIconPath": "./assets/img/index_icon_02.png"
+	    },
+	    {
+	      "pagePath": "pages/pages-list/project/project",
+	      "text": "项目列表",
+	      "iconPath": "./assets/img/index_icon_03.png",
+	      "selectedIconPath": "./assets/img/index_icon_03.1.png"
+	    },
+	    {
+	      "pagePath": "pages/pages-list/my/my",
+	      "text": "我的",
+	      "iconPath": "./assets/img/index_icon_04.png",
+	      "selectedIconPath": "./assets/img/index_icon_04.1.png"
+	    }
+	  ],
+	  "color": "#666666",
+	  "selectedColor": "#FF9525"
+	},
+  "navigateToMiniProgramAppIdList": [],
   "sitemapLocation": "sitemap.json",
-  "plugins": {
-    "chatbot": {
-      "version": "1.1.21",
-      "provider": "wx8c631f7e9f2465e1"
-    },
-    "WechatSI": {
-      "version": "0.3.4",
-      "provider": "wx069ba97219f66d99"
-    },
-    "wxPano": {
-      "version": "2.1.0",
-      "provider": "wx386c038238531f87"
-    },
-    "contactPlugin": {
-      "version": "1.3.0",
-      "provider": "wx104a1a20c3f81ec2"
-    },
-    "live-player-plugin": {
-      "version": "1.0.18",
-      "provider": "wx2b03c6e691cd7370"
-    }
-  },
+  "plugins": {},
   "permission": {
     "scope.userLocation": {
       "desc": "你的位置信息将用于小程序位置接口的效果展示"
@@ -173,12 +75,7 @@
   "requiredBackgroundModes": [
     "audio"
   ],
-  "useExtendedLib": {
-    "kbone": true,
-    "weui": true
-  },
   "usingComponents": {
-    "controls": "/components/audiocontrols/controls",
-    "mp-toptips": "weui-miniprogram/toptips/toptips"
+   
   }
 }

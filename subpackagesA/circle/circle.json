@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "环形进度条",
-  "usingComponents": {
-    "circle": "/components/circle/circle"
-  }
-}

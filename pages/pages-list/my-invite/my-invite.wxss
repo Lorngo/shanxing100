@@ -60,7 +60,7 @@
 	background: #ffffff;
 	border-radius: 12rpx;
 	margin: 0 auto 30rpx;
-	padding: 24rpx;
+	padding: 24rpx 10rpx 24rpx 24rpx;
 }
 .list_img{
 	position: relative;

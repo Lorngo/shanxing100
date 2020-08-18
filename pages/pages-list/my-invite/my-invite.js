@@ -1,7 +1,7 @@
 let app = new getApp()
 Page({
   data: {
-    baseurl:app.globalData.ASSETSURL,
+    baseurl:app.store.$state.ASSETSURL,
 		nomore:3,//1=加载更多 2=加载中 3=暂无数据
   },
   onLoad: function (options) {

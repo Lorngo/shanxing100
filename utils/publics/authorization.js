@@ -1,11 +1,12 @@
 // const app = getApp()
-import mta from '../mta_analysis.js'
+import mta from '../mta_analysis'
+import config from '../../config'
 import tool from './tool'
 //腾讯统计代码
-const statistics = appId => {
+const setMta = appId => {
   let option = {
-    "appID": appId,
-    "eventID": parseInt(appId) + 1,
+    "appID": config.MTAAPPID,
+    "eventID": parseInt(config.MTAAPPID) + 1,
     "autoReport": true,
     "statParam": true,
     "ignoreParams": [],
@@ -96,7 +97,7 @@ const openSetting = () => {
   })
 }
 module.exports = {
-  statistics,
+  setMta,
   isCheckSession,
   isSettingScope,
   login,

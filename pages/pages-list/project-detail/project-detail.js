@@ -3,7 +3,7 @@ import api from '../../../utils/api/api'
 import tool from '../../../utils/publics/tool.js'
 Page({
   data: {
-    baseurl:app.globalData.ASSETSURL,
+    baseurl:app.store.$state.ASSETSURL,
 		pronum:0,//加减的数量
 		type:0,//1减 2加
 		id:'',//项目id
@@ -21,7 +21,6 @@ Page({
 	 this.getDetail()
   },
   onShow: function () {
-
   },
 	//获取项目详情
 	getDetail(){

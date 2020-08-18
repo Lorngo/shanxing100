@@ -2,7 +2,7 @@
 let app = new getApp()
 Page({
   data: {
-		baseurl:app.globalData.ASSETSURL,
+		baseurl:app.store.$state.ASSETSURL,
     schooList:['林科大','铁道学院','网晨大学'],//学校列表
 		identList:['高校志愿者','社会志愿者'],//身份列表
 		schoolname:'',//学校名称

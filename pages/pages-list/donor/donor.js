@@ -1,6 +1,6 @@
 // pages/pages-list/donor/donor.js
 
-let app = new getApp().globalData
+let app = new getApp()
 import WxCountUp from '../../../utils/countUp.min.js'
 
 Page({
@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    baseUrl : app.ASSETSURL,
+    baseUrl : app.store.$state.ASSETSURL,
     hour : 4, //小时时间
     day  : '05' , //天数时间
     sortCheck: false, //选择捐赠金额还是时间排序

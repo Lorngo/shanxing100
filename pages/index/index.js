@@ -69,12 +69,12 @@ Page({
   onLoad(options) {
     this.configure() //核弹系统
     //静默登录
-    // login._request().then(res => {
-    //   console.log("【静默登录成功】", res)
-    //   //在这里做页面初始化请求操作，可保证本地缓存中有用户的openid/userId
-    // }).catch(err => {
-    //   console.log("err", err)
-    // })
+    login.login().then(res => {
+      console.log("【静默登录成功】", res)
+      //在这里做页面初始化请求操作，可保证本地缓存中有用户的openid/userId
+    }).catch(err => {
+      console.log("err", err)
+    })
 
     this.getImage()
   },
