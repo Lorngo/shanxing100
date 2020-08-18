@@ -37,14 +37,14 @@
 
 		<view class="list">
 
-			<view class="box" wx:for="{{xmList}}" wx:key="id" bindtap="toxmDetail" data-id="{{item.id}}">
+			<view class="box" wx:for="{{xmList.list}}" wx:key="id" bindtap="toxmDetail" data-id="{{item.goods_id}}">
 				<view class="left">
-					<image src=""></image>
+					<image src="{{item.banner}}" mode="widthFix"></image>
 				</view>
 
 				<view class="right">
-					<view class="h3">{{item.title}}</view>
-					<view class="h4">{{item.sub_title}}</view>
+					<view class="h3">{{item.name}}</view>
+					<view class="h4">{{item.intro}}</view>
 					<view class="but">快来帮助小朋友吧！</view>
 					<view class="num">
 						<view class="lef">
@@ -53,7 +53,7 @@
 						</view>
 						<view class="rig">
 							在捐人数：
-							<text>{{item.people}}人</text>
+							<text>{{item.join_people}}人</text>
 						</view>
 					</view>
 				</view>

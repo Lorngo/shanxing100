@@ -24,5 +24,6 @@ export default {
 	//项目详情
 	getProdetail:(data, url = 'api/goods/goods_detail') => { return myRequest(data, url) },
 	//项目详情内发起捐赠
-	goDonate:(data, url = 'api/order/submit_order') => { return myRequest(data, url) }
+  goDonate:(data, url = 'api/order/submit_order') => { return myRequest(data, url) }
+  //
 }

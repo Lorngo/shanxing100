@@ -46,11 +46,11 @@ Component({
       this.setData({
         toastShow : true
       })
-    },400)
+    },200)
     setTimeout(()=>{
       this.setData({
         toastShow2 : true
       })
-    },600)
+    },500)
   }
 })

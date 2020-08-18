@@ -63,7 +63,29 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "项目详情",
+					"pathName": "pages/pages-list/xmDetail/xmDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "大弹窗",
+					"pathName": "components/bigToast/bigToast",
+					"query": "",
+					"scene": null
+				}
+			]
 		}
 	}
 }
