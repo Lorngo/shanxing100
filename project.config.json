@@ -63,7 +63,14 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/pages-list/my/my",
+					"scene": null
+				}
+			]
 		}
 	}
 }

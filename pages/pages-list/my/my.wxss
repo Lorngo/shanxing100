@@ -33,14 +33,25 @@
 .head_img{
 	width: 110rpx;
 	height: 110rpx;
-	border-radius: 10rpx;
+	border-radius: 50%;
 }
 .user_info{
 	margin-left: 18rpx;
 }
 .user_name{
+	position: relative;
 	display: flex;
 	align-items: center;
+	margin-bottom: 2rpx;
+}
+.auth_btn{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 280rpx;
+	height: 38rpx;
+	opacity: 0;
+	
 }
 .names{
 	display: inline-block;
@@ -51,14 +62,15 @@
 }
 .user_grade{
 	display: inline-block;
-	padding: 0 10rpx;
+	padding: 0 14rpx;
 	height: 30rpx;
-	background-color: #ededed;
-	border-radius: 6rpx;
+	background-color: #fff;
+	border-radius: 30rpx;
 	text-align: center;
 	line-height: 30rpx;
 	font-size: 22rpx;
-	color: #666666;
+	color: #FF9425;
+	border: 1px solid #FF9425;
 	margin-left: 15rpx;
 }
 .article_line{

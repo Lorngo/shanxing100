@@ -1,7 +1,7 @@
 import config from '../../config'
 const myRequest = (data = {}, url, type = 'post', isUrl = false, isOpenid = false) => {
   !isUrl && (url = `${config.REQUESTURL}${url}`)
-  !isOpenid && Object.assign(data, { openid: getApp().store.getState().userInfo.openid || wx.getStorageSync('userInfo').openid })
+  !isOpenid && Object.assign(data, { openid: getApp().store.getState().userInfo.user_info.openid || wx.getStorageSync('userInfo').user_info.openid })
   return new Promise((resolve, reject) => {
     if (type == 'post') {
       postP(url, data).then(res => { resolve(res) }).catch(err => { reject(err) })

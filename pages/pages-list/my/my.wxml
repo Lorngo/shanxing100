@@ -4,10 +4,11 @@
 <view class="info_cpnt">
 	<!-- 用户头像部分 -->
 	<view class="user_head">
-		<image src="{{baseurl}}/my/center_icon_01.png" class="head_img" mode="aspectFit"></image>
+		<image src="{{userInfo.avatar?userInfo.avatar:baseurl}}{{userInfo.avatar?'':'/my/morehead.png'}}" class="head_img" mode="aspectFit"></image>
 	  <view class="user_info">
 			<view class="user_name">
-				<text class="names">一条小团团</text> 
+				<button wx:if="{{userInfo.nickname==''||userInfo.avatar==''}}" class="auth_btn" open-type="getUserInfo" bindgetuserinfo="getInfo"></button>
+				<text class="names">{{userInfo.nickname||'请点击授权登录'}}</text> 
 				<text class="user_grade">{{gradeList[0]}}</text>
 			</view>
 			<view class="article_line">
@@ -24,15 +25,15 @@
 	<!-- 捐赠数据部分 -->
 	<view class="donate_data">
 		<view class="num_data">
-			<view class="num_top">25864</view>
+			<view class="num_top">{{donateData.invite_amount||0}}</view>
 			<view class="num_bottom">共募善款(元)</view>
 		</view>
 		<view class="num_data">
-			<view class="num_top">1260</view>
+			<view class="num_top">{{donateData.amount}}</view>
 			<view class="num_bottom">我的捐赠(元)</view>
 		</view>
 		<view class="num_data">
-			<view class="num_top">1260</view>
+			<view class="num_top">{{donateData.times}}</view>
 			<view class="num_bottom">支持项目(次)</view>
 		</view>
 	</view>

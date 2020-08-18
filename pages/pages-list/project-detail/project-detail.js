@@ -83,13 +83,31 @@ Page({
 		let updata = {
 			goods_id:this.data.id,
 			is_team:0,
-			order_id:'',
+			parent_order_id:'',
 			number:this.data.pronum
 		}
 		tool.loading()
 		api.goDonate(updata).then(res=>{
 		tool.loading_h()
 			console.log("调起支付:",res);
+			let payData = res.data.data
+			if(res.data.code==1){
+				wx.requestPayment({
+					timeStamp:payData.pay_param.timeStamp,
+					nonceStr:payData.pay_param.nonceStr,
+					package:payData.pay_param.package,
+					signType:payData.pay_param.signType,
+					paySign:payData.pay_param.paySign,
+					success: (res) => {
+						tool.alert('支付成功，感谢您的捐赠')
+					},
+					fail: (err) => {
+						tool.alert(err)
+					}
+				})
+			}else{
+				tool.alert(res.data.msg)
+			}
 		})
 		// let type = e.currentTarget.dataset.type
 		// //type=1 捐赠弹窗显示  2  隐藏

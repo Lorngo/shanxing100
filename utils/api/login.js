@@ -35,7 +35,7 @@ const authorize = e => {
       api.uploadUserInfo({
         openid: wx.getStorageSync("userInfo").openid,
         nickname: userInfo.nickName,
-        headimg: userInfo.avatarUrl
+        avatar: userInfo.avatarUrl
       }).then(res => {
         tool.loading_h()
         Object.assign(userInfo, wx.getStorageSync("userInfo") || {})
