@@ -66,8 +66,28 @@
 			"list": [
 				{
 					"id": -1,
+<<<<<<< HEAD
 					"name": "个人中心",
 					"pathName": "pages/pages-list/my/my",
+=======
+					"name": "项目详情",
+					"pathName": "pages/pages-list/xmDetail/xmDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "大弹窗",
+					"pathName": "components/bigToast/bigToast",
+					"query": "",
+>>>>>>> 5f5d00608f09b5d7b7a8a15da9302112811e62d0
 					"scene": null
 				}
 			]

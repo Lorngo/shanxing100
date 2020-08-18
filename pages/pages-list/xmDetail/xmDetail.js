@@ -1,5 +1,6 @@
 // pages/pages-list/xmDetail/xmDetail.js
 import tool from '../../../utils/publics/tool'
+import api from '../../../utils/api/api'
 Page({
 
   /**
@@ -15,6 +16,7 @@ Page({
         right : '直接捐赠'
        }
      },
+     xmDetail : {}, //项目列表信息
      toastShow : false , //展现弹窗层
   },
 
@@ -22,7 +24,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    tool.loading()
+     console.log(options)
+     var id = options.id
+     this.getProdetail(id)
   },
 
   /**
@@ -31,6 +36,27 @@ Page({
   onReady: function () {
 
   },
+
+   //项目列表详情
+   getProdetail(id){
+     var data = {
+      goods_id : id
+     }
+
+     api.getProdetail(data).then(res => {
+       if(res.data.code == 1){
+         console.log('项目列表的详情信息====',res.data.data)
+         this.setData({
+          xmDetail : res.data.data
+         })
+         setTimeout(() =>{
+          tool.loading_h()
+         },100)
+       }else{
+         console.log('项目列表的错误信息====',res.data.msg)
+       }
+     })
+   },
 
    //发起邀请捐
    toDonate(){

@@ -75,22 +75,26 @@ Page({
     }).catch(err => {
       console.log("err", err)
     })
-
+    
+    //轮播图
     this.getImage()
+    
+    //项目列表
+    this.getXmlist()
   },
 
    //跳转项目图文介绍
    toxmDetail(e){
-    console.log(e)
     let id = e.currentTarget.dataset.id
-
-     tool.jump_nav(`/pages/pages-list/xmDetail/xmDetail?${id}`)
+    console.log(id)
+     tool.jump_nav(`/pages/pages-list/xmDetail/xmDetail?id=${id}`)
     
   },
 
   //跳转小组详情
   togroudDetail(e){
     let id = e.currentTarget.dataset.id
+
     tool.jump_nav(`/pages/pages-list/group/group?id=${id}`)
   },
 
@@ -137,6 +141,21 @@ Page({
       }
     })
 
+  },
+
+  //获取项目图文介绍
+  getXmlist(){
+
+     api.getXmlist().then(res => {
+       if(res.data.code == 1){
+         console.log('项目图文介绍的数据====',res.data.data)
+         this.setData({
+          xmList : res.data.data
+         })
+       }else{
+         console.log('项目图文的错误信息====',res.data.msg)
+       }
+     })
   },
 
   onShareAppMessage() {}

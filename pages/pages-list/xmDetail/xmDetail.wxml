@@ -2,16 +2,16 @@
 <view class="head">
 
    <view class="head_img">
-      <image src="" mode="aspectFill"></image>
+      <image src="{{xmDetail.banner}}" mode="widthFix"></image>
    </view>
 
     <view class="num">
        <view class="box">
           <view class="left">
-           筹款金额： <text>25800元</text>
+           筹款金额： <text>{{xmDetail.price}}元</text>
           </view>
           <view class="right">
-           在捐人数： <text>2552人</text>
+           在捐人数： <text>{{xmDetail.join_people}}人</text>
           </view>
        </view>
     </view>
@@ -20,7 +20,16 @@
 
 
 <view class="txt">
-   
+     <view wx:for="{{xmDetail.content}}" wx:key="index" >
+           <view class="text" wx:if="{{item.type == 'text'}}">
+            {{item.value}}
+           </view>
+
+           <view class="text" wx:if="{{item.type == image}}">
+              <image></image>
+           </view>
+
+     </view>
 </view>
 
 
