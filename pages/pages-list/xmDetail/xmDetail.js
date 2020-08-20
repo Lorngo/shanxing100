@@ -60,7 +60,7 @@ Page({
 
    //发起邀请捐
    toDonate(){
-      tool.jump_nav(`/pages/pages-list/donate/donate`)
+      tool.jump_nav(`/pages/pages-list/donate/donate?goods_id=${this.data.xmDetail.goods_id}`)
    },
 
   //点击捐赠

@@ -1,5 +1,8 @@
 // pages/invite/invite.js
 import tool from '../../../utils/publics/tool'
+import api from '../../../utils/api/api'
+import api2 from '../../../utils/api/api2'
+
 Page({
 
   /**
@@ -60,8 +63,12 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
 
+     this.getInvite()
+
+  },
+   
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -144,6 +151,20 @@ Page({
 
 
 
+  },
+
+  //获取列表
+  getInvite(){
+    var data = {
+
+    }
+    api2.getInvite(data).then(res => {
+      if(res.data.code == 1){
+        console.log('邀请捐列表数据====',res.data.data)
+      }else{
+        console.log('邀请捐列表的错误信息====',res.data.msg)
+      }
+    })
   },
 
   /**

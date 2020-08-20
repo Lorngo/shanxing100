@@ -212,7 +212,7 @@ const chooseMessageFile = (count = 1) => {
   return new Promise(resolve => {
     wx.chooseMessageFile({
       count: count,
-      type: 'file',
+      type: 'image',
       success(res) {
         resolve(res)
       }

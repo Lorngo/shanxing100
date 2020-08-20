@@ -15,16 +15,8 @@ export default {
   /**
    ****项目接口
    */
-	//获取图片
-	getImage : (data, url = 'api/banner/get_banner') => { return myRequest(data, url) },
-  //获取签名[示例--可删]
-  getJoinVoIPChatSignature: (data, url = '/api/oauth/encrypt') => { return myRequest(data, url) },
-	//项目列表
-	getXmlist:(data, url = 'api/goods/goods_list') => { return myRequest(data, url) },
-	//项目详情
-	getProdetail:(data, url = 'api/goods/goods_detail') => { return myRequest(data, url) },
-	//项目详情内发起捐赠
-	goDonate:(data, url = 'api/order/submit_order') => { return myRequest(data, url) },
-	//获取用户信息
-	getUserInfo:(data, url = 'api/user/user_info') => { return myRequest(data, url) },
+	//上传图片
+	sengImage : (data, url = 'api/upload/oss_upload') => { return myRequest(data, url) },
+  //获取邀请捐列表
+  getInvite : (data, url = 'api/order/submit_order') => { return myRequest(data, url) },
 }

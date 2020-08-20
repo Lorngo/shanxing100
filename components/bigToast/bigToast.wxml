@@ -29,7 +29,7 @@
 						</view>
 
 						<view class="input">
-							<input name='ticketHead' class="smallInput" value="{{ticketHead}}" placeholder="湖南省长沙市开福区" placeholder-class="inputPla"></input>
+							<input name='ticketHead' class="smallInput" value="{{ticketHead}}" placeholder="请填写票据抬头" placeholder-class="inputPla"></input>
 						</view>
 					</view>
 
@@ -39,7 +39,7 @@
 						</view>
 
 						<view class="input">
-							<input name='num' class="smallInput" value="{{num}}" type="number" placeholder="12548521325886111" placeholder-class="inputPla"></input>
+							<input name='num' class="smallInput" value="{{num}}" type="number" placeholder="请填写正确的税号" placeholder-class="inputPla"></input>
 						</view>
 					</view>
 
@@ -49,7 +49,7 @@
 						</view>
 
 						<view class="input">
-							<input name='phone' class="smallInput" value="{{phone}}" maxlength='11' type="number" placeholder="15865232569" placeholder-class="inputPla"></input>
+							<input name='phone' class="smallInput" value="{{phone}}" maxlength='11' type="number" placeholder="请填写您的手机号" placeholder-class="inputPla"></input>
 						</view>
 					</view>
 
@@ -59,7 +59,7 @@
 						</view>
 
 						<view class="input">
-							<input name='email' class="smallInput" value="{{email}}" placeholder="125864253@qq.com" placeholder-class="inputPla"></input>
+							<input name='email' class="smallInput" value="{{email}}" placeholder="请输入正确的邮箱" placeholder-class="inputPla"></input>
 						</view>
 					</view>
 

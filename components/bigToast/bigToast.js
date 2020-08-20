@@ -62,7 +62,7 @@ Component({
       var data = e.detail.value
 
       if(data.showName == '' && this.checked == false){
-        tool.alert('请输入姓名')
+        tool.alert('请输入公示名称')
       }else if (data.ticketHead == ''){
         tool.alert('请输入票据抬头')
       }else if(data.num == ''){

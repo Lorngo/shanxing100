@@ -1,6 +1,8 @@
 <!--pages/pages-list/donate/donate.wxml-->
 <view class="page">
-	<view class="list">
+	<form bindsubmit="formSubmit">
+	  
+    <view class="list">
 
 
 		<view class="box">
@@ -8,7 +10,7 @@
 				邀请捐目标
 			</view>
 			<view class="right">
-				<input placeholder="(活动规定每个队伍的金额必须为200元)" placeholder-style="color:rgba(153,153,153,1)"></input>
+				<input name='money' placeholder="(活动规定每个队伍的金额必须为200元)" placeholder-style="color:rgba(153,153,153,1);"></input>
 			</view>
 		</view>
 
@@ -16,8 +18,10 @@
 			<view class="left">
 				邀请捐名称
 			</view>
-			<view class="right title">
-				今天请为天使点赞
+			<view class="right title" >
+			 <view style="text-align: right;">
+			    	{{donateTitle}}
+			 </view>
 			</view>
 		</view>
 
@@ -26,11 +30,11 @@
 				邀请捐口号
 			</view>
 			<view class="right">
-				<input placeholder="献出一点爱心，收获一份真诚" placeholder-style="color:#333333"></input>
+				<input name='slogan' placeholder="{{slogan}}" placeholder-style="color:#333333;text-align: right;"></input>
 			</view>
 		</view>
 
-		<view class="box">
+		<!-- <view class="box">
 			<view class="left">
 				邀请捐项目
 			</view>
@@ -45,7 +49,7 @@
          </view>
 			</picker>
 
-		</view>
+		</view> -->
 
 		<view class="image">
 			<view class="top">
@@ -69,7 +73,7 @@
 			</view>
 
 			<view class="txt">
-				我已经阅读并同意<text>《某某某协议》</text>
+			我已经阅读并同意<text>《邀请捐用户协议》</text>
 			</view>
 		</view>
 
@@ -77,7 +81,11 @@
 
 	</view>
 
+
+
 	<view class="but">
-		<view bindtap="uploadbutton">确认上传</view>
+		<button form-type="submit">确认上传</button>
 	</view>
+
+		</form>
 </view>

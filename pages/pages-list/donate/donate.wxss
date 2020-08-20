@@ -21,6 +21,7 @@
 }
 
 .page .list .box view{
+  height: 27rpx;
   font-size: 28rpx;
 font-family: PingFang SC Medium, PingFang SC Medium-Medium;
 font-weight: 500;
@@ -30,9 +31,18 @@ color: #666666;
 
 .page .list .box  .right{
   width: 486rpx;
-  height: 27rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* text-align: right; */
+  justify-content: right;
+}
+
+.page .list .box  .right input{
+  width: 100%;
   text-align: right;
 }
+
 
 
 .page .list .box .rightFlex .smallBox{
@@ -73,6 +83,11 @@ color: #666666;
 font-family: PingFang SC Medium, PingFang SC Medium-Medium;
 font-weight: 500;
 color: #333333;
+text-align: right;
+}
+
+.page .list .box .title view{
+  width: 100%;
 }
 
 .page .list .image{
@@ -198,7 +213,7 @@ margin-left: 19rpx;
 
 }
 
-.page .but view{
+.page .but button{
   width: 676rpx;
   height: 100%;
   border-radius: 44rpx;
