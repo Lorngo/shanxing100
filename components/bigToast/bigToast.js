@@ -1,4 +1,5 @@
 // components/bigToast/bigTosat.js
+import tool from '../../utils/publics/tool'
 Component({
   /**
    * 组件的属性列表
@@ -21,7 +22,7 @@ Component({
    */
   data: {
       checked :true ,//是否选中
-      showToast : true , //展现弹窗
+      showToast : false , //展现弹窗
   },
 
   /**
@@ -44,7 +45,6 @@ Component({
     return(){
       this.triggerEvent('tapReturn', {})
 
-<<<<<<< HEAD
     },
 
     //表单提交
@@ -81,16 +81,16 @@ Component({
       return false
     } else {
       return true
-=======
->>>>>>> ea73bb90796873c5f71c74c6e3125722ab16b32b
     }
   },
+},
 
-    // ready(){
-    //   this.setData({
-    //     showToast : true
-    //   })
-    //   console.log('执行了')
-    // },
-
+created(){
+  setTimeout(()=>{
+    this.setData({
+      showToast : true
+    })
+  },400)
+ 
+}
 })

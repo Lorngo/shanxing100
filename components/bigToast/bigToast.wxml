@@ -1,7 +1,8 @@
 <!--components/bigToast/bigTosat.wxml-->
 <view class="toast">
 
-	<block wx:if="{{showToast == true}}">
+	<block >
+	<form bindsubmit="formSubmit">
 		<view class="box {{showToast ? 'show' : 'hidden'}}">
 			<view class="return" bindtap="return">
 
@@ -11,7 +12,6 @@
 				<view class="title">
 					填写信息
 				</view>
-
 				<view class="showname">对外公示名称<text class="txt">(对外公示，将展示对外公示姓名)</text></view>
 
 				<view class="inp">
@@ -23,13 +23,18 @@
 					<view>匿名</view>
 				</view>
 
-<<<<<<< HEAD
-						<view class="input">
-							<input name='ticketHead' class="smallInput" value="{{ticketHead}}" placeholder="请填写票据抬头" placeholder-class="inputPla"></input>
-						</view>
+				<view class="box ticket">
+					<view class="head">
+						票据抬头
 					</view>
 
-					<view class="box num">
+					<view class="input">
+						<input name='ticketHead' class="smallInput" value="{{ticketHead}}" placeholder="请填写票据抬头" placeholder-class="inputPla"></input>
+					</view>
+
+				</view>
+
+				<view class="box num">
 						<view class="head">
 							税号
 						</view>
@@ -37,20 +42,10 @@
 						<view class="input">
 							<input name='num' class="smallInput" value="{{num}}" type="number" placeholder="请填写正确的税号" placeholder-class="inputPla"></input>
 						</view>
-=======
-				<view class="box ticket">
-					<view class="head">
-						票据抬头
-					</view>
 
-					<view class="input">
-						<input class="smallInput" placeholder="湖南省长沙市开福区" placeholder-class="inputPla"></input>
->>>>>>> ea73bb90796873c5f71c74c6e3125722ab16b32b
-					</view>
-				</view>
+						</view>
 
-<<<<<<< HEAD
-					<view class="box num">
+						<view class="box num">
 						<view class="head">
 							手机号
 						</view>
@@ -58,42 +53,16 @@
 						<view class="input">
 							<input name='phone' class="smallInput" value="{{phone}}" maxlength='11' type="number" placeholder="请填写您的手机号" placeholder-class="inputPla"></input>
 						</view>
-=======
-				<view class="box num">
-					<view class="head">
-						税号
->>>>>>> ea73bb90796873c5f71c74c6e3125722ab16b32b
-					</view>
-
-					<view class="input">
-						<input class="smallInput" placeholder="12548521325886111" placeholder-class="inputPla"></input>
-					</view>
-				</view>
-
-<<<<<<< HEAD
-						<view class="input">
-							<input name='email' class="smallInput" value="{{email}}" placeholder="请输入正确的邮箱" placeholder-class="inputPla"></input>
 						</view>
-=======
-				<view class="box num">
-					<view class="head">
-						手机号
->>>>>>> ea73bb90796873c5f71c74c6e3125722ab16b32b
-					</view>
 
-					<view class="input">
-						<input class="smallInput" placeholder="15865232569" placeholder-class="inputPla"></input>
-					</view>
-				</view>
-
-				<view class="box num">
+						<view class="box num">
 					<view class="head">
 						邮箱
 					</view>
 
-					<view class="input">
-						<input class="smallInput" placeholder="125864253@qq.com" placeholder-class="inputPla"></input>
-					</view>
+				<view class="input">
+							<input name='email' class="smallInput" value="{{email}}" placeholder="请输入正确的邮箱" placeholder-class="inputPla"></input>
+						</view>
 				</view>
 
 				<view class="txt">
@@ -104,10 +73,14 @@
 
 				<view class="button">
 					<view class="left" bindtap="onCancel">放弃开票</view>
-					<view class="right" bindtap="onConfirm">提交</view>
+					<button class="right" form-type="submit">提交</button>
 				</view>
-			</view>
-		</view>
-	</block>
 
+
+
+			</view>
+
+		</view>
+		</form >
+	</block>
 </view>

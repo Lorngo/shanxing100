@@ -72,11 +72,13 @@ Page({
     login.login().then(res => {
       console.log("【静默登录成功】", res)
       //在这里做页面初始化请求操作，可保证本地缓存中有用户的openid/userId
+      this.getImage()
+      this.getXmlist()
     }).catch(err => {
       console.log("err", err)
     })
 
-    this.getImage()
+   
   },
 
    //跳转项目图文介绍
@@ -84,7 +86,7 @@ Page({
     console.log(e)
     let id = e.currentTarget.dataset.id
 
-     tool.jump_nav(`/pages/pages-list/xmDetail/xmDetail?${id}`)
+     tool.jump_nav(`/pages/pages-list/xmDetail/xmDetail?goods_id=${id}`)
     
   },
 
@@ -136,6 +138,28 @@ Page({
         console.log('轮播图的错误信息=====',res.data.msg)
       }
     })
+
+  },
+
+  //获取项目列表
+  getXmlist(){
+
+     var data = {
+       limit : 3
+     }
+
+     api.getXmlist(data).then(res => {
+       if(res.data.code == 1){
+         console.log('项目图文介绍的列表信息+====',res.data.data)
+         this.setData({
+          xmList : res.data.data
+         })
+       }else{
+         console.log('项目图文的错误信息====',res.data.msg)
+       }
+     })
+
+
 
   },
 

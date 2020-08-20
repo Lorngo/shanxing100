@@ -2,7 +2,7 @@
 <view class="head">
 
    <view class="head_img">
-      <image src="" mode="aspectFill"></image>
+      <image src="{{xmDetail.banner}}" mode="width"></image>
    </view>
 
     <view class="num">
@@ -20,7 +20,18 @@
 
 
 <view class="txt">
-   
+     
+      <view class="box">
+      
+          <view wx:for="{{xmDetail.content}}"  wx:key="index" class="text" >
+                <view wx:if="{{item.type == 'text'}}">
+                  {{item.value}}
+                </view>
+          </view>
+         
+      </view>
+
+
 </view>
 
 

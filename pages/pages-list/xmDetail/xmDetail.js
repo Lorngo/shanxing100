@@ -1,5 +1,6 @@
 // pages/pages-list/xmDetail/xmDetail.js
 import tool from '../../../utils/publics/tool'
+import api from '../../../utils/api/api'
 Page({
 
   /**
@@ -23,6 +24,7 @@ Page({
    */
   onLoad: function (options) {
 
+      this.getProdetail(options.goods_id)
   },
 
   /**
@@ -48,6 +50,24 @@ Page({
   return(){
     this.setData({
       toastShow :false
+    })
+  },
+
+
+  //获取项目详情
+  getProdetail(id){
+    var data = {
+      goods_id : id
+    }
+    api.getProdetail(data).then(res => {
+      if(res.data.code == 1){
+        console.log('项目详情的信息====',res.data.data)
+        this.setData({
+          xmDetail : res.data.data
+        })
+      }else{
+        console.log('项目详情的错误信息====',res.data.msg)
+      }
     })
   },
 
