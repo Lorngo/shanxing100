@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+		"my-Toast" : "/components/toast/toast"
+	},
 	"navigationBarTitleText":"报名"
 }

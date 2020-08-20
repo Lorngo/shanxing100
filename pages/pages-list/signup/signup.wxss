@@ -106,7 +106,7 @@
 	vertical-align: middle;
 }
 .up_img{
-	margin: 0 30rpx;
+	margin: 20rpx 30rpx 0;
 }
 .up_box{
 	position: relative;

@@ -11,7 +11,8 @@ Page({
 		// flag:false,//是否同意
 		// isMoney:true,//是否显示金额选择弹窗,默认隐藏
 		money:10,//捐赠的金额
-		detailData:{}//详情信息
+		detailData:{},//详情信息
+		isFill:false//填写信息的弹窗
   },
   onLoad: function (res) {
    this.setData({
@@ -151,4 +152,16 @@ Page({
 	// 		return
 	// 	}
 	// }
+	//关闭填写信息弹窗
+	closeShow(){
+		
+	},
+	//放弃开票
+	onCancel(){
+		
+	},
+	//提交开票信息
+	onConfirm(e){
+		console.log(e);
+	}
 })

@@ -9,7 +9,7 @@
 			<view class="user_name">
 				<button wx:if="{{userInfo.nickname==''||userInfo.avatar==''}}" class="auth_btn" open-type="getUserInfo" bindgetuserinfo="getInfo"></button>
 				<text class="names">{{userInfo.nickname||'请点击授权登录'}}</text> 
-				<text class="user_grade">{{gradeList[0]}}</text>
+				<text class="user_grade">{{donateData.rank}}</text>
 			</view>
 			<view class="article_line">
 				<view class="line_img">
@@ -18,7 +18,7 @@
 				<view class="article_num">60/100</view>
 			</view>
 			<!-- <view class="artic_icon"> -->
-				<image src="{{baseurl}}/lv/lv1.png" mode="aspectFit" class="artic_icon"></image>
+				<image src="{{baseurl}}/lv/lv{{donateData.level||1}}.png" mode="aspectFit" class="artic_icon"></image>
 			<!-- </view> -->
 		</view>
 	</view>

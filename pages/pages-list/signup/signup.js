@@ -1,4 +1,4 @@
-// 志愿者信息页面xw
+// 志愿者报名页面xw
 let app = new getApp()
 import tool from "../../../utils/publics/tool.js"
 import api from "../../../utils/api/api.js"
@@ -15,46 +15,123 @@ Page({
 		proList: [], //选择后的省市区列表
 		massName: '', //社团名称  学校不可选，选择了社团自动对应相应的学校
 		imgUrl: '', //显示用的图片路径
-		upImgurl: '' //上传的图片路径
+		upImgurl: '' ,//上传的图片路径
+		checkType:-1,//志愿者信息审核状态  0-待审核 1-审核通过 2-审核失败被驳回
+		isModel:false,//显示提示弹窗  0给出提示  2重新申请
+		volunData:{},//志愿者信息
+		modelData:{}//模态框提示信息
 	},
 	onLoad: function(options) {
 		this.getMasslist()
+		this.getVolunInfo()
 	},
 	onShow: function() {
 
 	},
+	//获取用户志愿者信息
+	getVolunInfo(){
+		tool.loading('',true)
+		api.getVolunInfo().then(res=>{
+			tool.loading_h()
+			console.log("获取到的志愿者信息",res);
+			let data = res.data.data
+			if(res.data.code==1)
+			{
+			this.setData({
+				checkType:data.status
+			})
+				if(data.status==0)
+				{
+					let tipdata = {
+						title:'通知',
+						main:'谢谢你的参与,请等待我们的审核',
+						type:2,
+						mainbut:'好的'
+					}
+					this.setData({
+						isModel:true,
+						modelData:tipdata
+					})
+				}else if(data.status==2)
+				{
+				let datas = {
+					isModel:true,
+					modelData:{
+						title:'申请驳回',
+						main:data.reason,
+						type:2,
+						mainbut:'重新报名'
+					},
+					volunData:data,
+					provinces:data.province+'-'+ data.city +'-'+ data.area,
+					region:[data.province,data.city,data.area],
+					proList:[data.province,data.city,data.area]
+				}
+			for(let i=0,len=this.data.identList.length;i<len;i++)
+			{
+				if(this.data.identList[i]==data.identity)
+				{
+					datas.identname = data.identity,
+					datas.identKey = i
+				}
+			}
+			for(let j=0,len=this.data.massList.length;j<len;j++)
+			{
+				if(this.data.massList[j].mass_id==data.mass_id)
+				{
+					datas.massName = this.data.massList[j].mass_name,
+					datas.massKey = j
+				}
+			}
+				this.setData(datas)
+		}
+			}else{
+				console.log(res.data.msg);
+				// tool.alert(res.data.msg)
+			}
+		})
+	},
+	//关闭小弹窗&&模态框按钮操作事件
+	closeModel(){
+		if(this.data.checkType==0)
+		{
+			wx.navigateBack({
+				delta:1
+			})
+		}else if(this.data.checkType==2)
+		{
+			this.setData({
+				isModel:false
+			})
+		}
+	},
 	//上传图片
 	oploadImg() {
-
-
 		let _this = this
-
 		wx.chooseImage({
 			success(res) {
 				console.log(res);
-				if(res.tempFiles[0].size>2097152)
-				{
+				if (res.tempFiles[0].size > 2097152) {
 					tool.alert('图片大小不可超过2M')
-				}else{
+				} else {
 					const tempFilePaths = res.tempFilePaths
-						_this.setData({
-							imgUrl: res.tempFilePaths[0]
-						})
-						wx.uploadFile({
-							url: 'https://game.vrupup.com/sanguo/yangyuntian/applet/good100/public/api/upload/oss_upload', //仅为示例，非真实的接口地址
-							filePath: tempFilePaths[0],
-							name: 'file',
-							success(res) {
-								var data = JSON.parse(res.data)
-								_this.setData({
-									upImgurl: data.data.src
-								})
-							}
-						})
-					}
+					_this.setData({
+						imgUrl: res.tempFilePaths[0]
+					})
+					wx.uploadFile({
+						url: 'https://game.vrupup.com/sanguo/yangyuntian/applet/good100/public/api/upload/oss_upload', //仅为示例，非真实的接口地址
+						filePath: tempFilePaths[0],
+						name: 'file',
+						success(res) {
+							var data = JSON.parse(res.data)
+							_this.setData({
+								upImgurl: data.data.src
+							})
+						}
+					})
 				}
+			}
 		})
-
 	},
 	//报名
 	goAlpay(e) {
@@ -69,7 +146,7 @@ Page({
 			title = "请填写正确的手机号"
 		} else if (this.data.identKey == -1) {
 			title = "请选择您的身份"
-		} else if (!this.data.provinces) {
+		} else if (!this.data.proList) {
 			title = "请选择您所在省市区"
 		} else if (!data.address) {
 			title = "请填写您所在的具体地址"
@@ -93,44 +170,41 @@ Page({
 			return
 		}
 		let upData = {
-			identity:this.data.identList[this.data.identKey],
-			province:this.data.proList[0],
-			city:this.data.proList[1],
-			area:this.data.proList[2],
-			address:data.address,
-			name:data.name,
-			mobile:data.mobile,
-			photo:this.data.upImgurl,		
+			identity: this.data.identList[this.data.identKey],
+			province: this.data.proList[0],
+			city: this.data.proList[1],
+			area: this.data.proList[2],
+			address: data.address,
+			name: data.name,
+			mobile: data.mobile,
+			photo: this.data.upImgurl,
 		}
-		if(this.data.identKey!=2)
-		{
+		if (this.data.identKey != 2) {
 			upData.email = data.email
 			upData.mass_id = this.data.massList[this.data.massKey].mass_id
 		}
-		if(this.data.identKey!=0)
-		{
+		if (this.data.identKey != 0) {
 			upData.industry = data.industry
 			upData.vocation = data.vocation
 		}
 		tool.loading()
-		api.applyVolun(upData).then(res=>{
-		 tool.loading_h()
-		 if(res.data.code==1)
-		 {
-			 tool.alert('提交成功，请等待审核')
-			 setTimeout(res=>{
-				 wx.navigateBack({
-					 delta:1
-				 })
-			 },300)
-		 }else{
-			 tool.alert(res.data.msg)
-			 setTimeout(res=>{
-			 				 wx.navigateBack({
-			 					 delta:1
-			 				 })
-			 },300)
-		 }
+		api.applyVolun(upData).then(res => {
+			tool.loading_h()
+			if (res.data.code == 1) {
+				tool.alert('提交成功，请等待审核')
+				setTimeout(res => {
+					wx.navigateBack({
+						delta: 1
+					})
+				}, 300)
+			} else {
+				tool.alert(res.data.msg)
+				setTimeout(res => {
+					wx.navigateBack({
+						delta: 1
+					})
+				}, 300)
+			}
 		})
 	},
 	//获取社团列表

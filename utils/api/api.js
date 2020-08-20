@@ -31,4 +31,6 @@ export default {
 	getMassList:(data, url = 'api/mass/mass_list') => { return myRequest(data, url) },
 	//申请报名成为志愿者
 	applyVolun:(data, url = 'api/user/apply_volunteer') => { return myRequest(data, url) },
+	//获取志愿者信息
+	getVolunInfo:(data, url = 'api/user/apply_volunteer_info') => { return myRequest(data, url) },
 }

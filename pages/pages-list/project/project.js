@@ -59,7 +59,6 @@ Page({
 	},
 	//上拉加载
   lowerData(){
-		console.log('6');
 		this.getXmlist()
 	},
 	//获取项目列表

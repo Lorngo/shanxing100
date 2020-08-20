@@ -5,8 +5,7 @@ import api from "../../../utils/api/api.js"
 Page({
   data: {
    baseurl:app.store.$state.ASSETSURL,
-	 gradeList:['公益新秀','乐于助人','古道热肠','乐善好施','积善成德','仁者爱人','大爱无疆'],
-   volunType:1,//判断是否是志愿者 1是  0不是
+   volunType:0,//判断是否是志愿者 1是  0不是
 	 brightStar:[1,2],//亮的星星数
 	 darkStar:[1],//暗的星星数
 	 isMedal:true,//是否显示勋章弹窗
@@ -30,7 +29,7 @@ Page({
 			{
 				this.setData({
 					donateData:res.data.data.user_info,
-					// volunType:res.data.data.user_info.is_volunteer
+					volunType:res.data.data.user_info.is_volunteer
 				})
 			}else{
 				tool.alert(res.data.msg)

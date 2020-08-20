@@ -100,6 +100,26 @@
 					"pathName": "pages/pages-list/invite/invite",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "项目列表内容详情",
+					"pathName": "pages/pages-list/project-detail/project-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "申请成为志愿者",
+					"pathName": "pages/pages-list/signup/signup",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "志愿者信息",
+					"pathName": "pages/pages-list/volunt-info/volunt-info",
+					"scene": null
 				}
 			]
 		}
