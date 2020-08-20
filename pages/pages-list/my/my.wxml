@@ -29,11 +29,11 @@
 			<view class="num_bottom">共募善款(元)</view>
 		</view>
 		<view class="num_data">
-			<view class="num_top">{{donateData.amount}}</view>
+			<view class="num_top">{{donateData.amount||0}}</view>
 			<view class="num_bottom">我的捐赠(元)</view>
 		</view>
 		<view class="num_data">
-			<view class="num_top">{{donateData.times}}</view>
+			<view class="num_top">{{donateData.times||0}}</view>
 			<view class="num_bottom">支持项目(次)</view>
 		</view>
 	</view>

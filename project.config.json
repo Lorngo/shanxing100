@@ -5,30 +5,30 @@
 	},
 	"setting": {
 		"urlCheck": false,
-		"scopeDataCheck": false,
-		"coverView": true,
 		"es6": true,
+		"enhance": false,
 		"postcss": true,
-		"compileHotReLoad": false,
 		"preloadBackgroundData": false,
 		"minified": true,
-		"autoAudits": false,
 		"newFeature": true,
-		"uglifyFileName": false,
-		"uploadWithSourceMap": true,
-		"useIsolateContext": true,
+		"coverView": true,
 		"nodeModules": true,
-		"enhance": false,
-		"useCompilerModule": true,
-		"userConfirmedUseCompilerModuleSwitch": false,
+		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"uglifyFileName": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": false,
+		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": true,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.0",
@@ -66,28 +66,15 @@
 			"list": [
 				{
 					"id": -1,
-<<<<<<< HEAD
 					"name": "个人中心",
 					"pathName": "pages/pages-list/my/my",
-=======
-					"name": "项目详情",
-					"pathName": "pages/pages-list/xmDetail/xmDetail",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "首页",
-					"pathName": "pages/index/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 2,
-					"name": "大弹窗",
-					"pathName": "components/bigToast/bigToast",
-					"query": "",
->>>>>>> 5f5d00608f09b5d7b7a8a15da9302112811e62d0
+					"name": "用户报名成为志愿者",
+					"pathName": "pages/pages-list/signup/signup",
 					"scene": null
 				}
 			]
