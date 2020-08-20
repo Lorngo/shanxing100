@@ -19,4 +19,12 @@ export default {
 	sengImage : (data, url = 'api/upload/oss_upload') => { return myRequest(data, url) },
   //获取邀请捐列表
   getInvite : (data, url = 'api/order/submit_order') => { return myRequest(data, url) },
+  //捐赠小组
+  getGroup : (data, url = 'api/group/group_list') => { return myRequest(data, url) },
+  //获取小组详情
+  getGroupDetail : (data, url = 'api/group/group_detail') => { return myRequest(data, url) },
+  //获取小组成员列表
+  getGrouppeople :  (data, url = 'api/group/member_list') => { return myRequest(data, url) },
+  //加入小组
+  joinGroup      :  (data, url = 'api/group/join_group') => { return myRequest(data, url) },
 }

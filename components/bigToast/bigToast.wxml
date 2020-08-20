@@ -3,7 +3,7 @@
 
 	<block >
 	<form bindsubmit="formSubmit">
-		<view class="box {{showToast ? 'show' : 'hidden'}}">
+		<view class="box {{showToast ? 'show' : 'hidden'}} {{donnorInfo.type == 1 ? 'big' : 'small'}}" >
 			<view class="return" bindtap="return">
 
 			</view>
@@ -15,7 +15,7 @@
 				<view class="showname">对外公示名称<text class="txt">(对外公示，将展示对外公示姓名)</text></view>
 
 				<view class="inp">
-					<input class="smallInput"></input>
+					<input name='name' value="{{donnorInfo.name}}" class="smallInput"></input>
 				</view>
 
 				<view class="hidname">
@@ -29,7 +29,7 @@
 					</view>
 
 					<view class="input">
-						<input name='ticketHead' class="smallInput" value="{{ticketHead}}" placeholder="请填写票据抬头" placeholder-class="inputPla"></input>
+						<input name='ticketHead' class="smallInput" value="{{donnorInfo.ticketHead}}" placeholder="请填写票据抬头" placeholder-class="inputPla"></input>
 					</view>
 
 				</view>
@@ -40,7 +40,7 @@
 						</view>
 
 						<view class="input">
-							<input name='num' class="smallInput" value="{{num}}" type="number" placeholder="请填写正确的税号" placeholder-class="inputPla"></input>
+							<input name='num' class="smallInput" value="{{donnorInfo.num}}" maxlength='20' type="number" placeholder="请填写正确的税号" placeholder-class="inputPla"></input>
 						</view>
 
 						</view>
@@ -51,7 +51,7 @@
 						</view>
 
 						<view class="input">
-							<input name='phone' class="smallInput" value="{{phone}}" maxlength='11' type="number" placeholder="请填写您的手机号" placeholder-class="inputPla"></input>
+							<input name='phone' class="smallInput" value="{{donnorInfo.phone}}" maxlength='11' type="number" placeholder="请填写您的手机号" placeholder-class="inputPla"></input>
 						</view>
 						</view>
 
@@ -61,14 +61,12 @@
 					</view>
 
 				<view class="input">
-							<input name='email' class="smallInput" value="{{email}}" placeholder="请输入正确的邮箱" placeholder-class="inputPla"></input>
+							<input name='email' class="smallInput" value="{{donnorInfo.email}}" placeholder="请输入正确的邮箱" placeholder-class="inputPla"></input>
 						</view>
 				</view>
 
 				<view class="txt">
-					为保障每一位捐赠人的权益，中国扶贫基金会将为您
-					开具电子捐赠票据，请您填写如上信息，完成提交后
-					发送至您的电子邮箱。
+				{{donnorInfo.defaultTxt}}
 				</view>
 
 				<view class="button">

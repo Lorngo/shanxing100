@@ -37,7 +37,7 @@
 
 		<view class="list">
 
-			<view class="box" wx:for="{{xmList.list}}" wx:key="id" bindtap="toxmDetail" data-id="{{item.goods_id}}">
+			<view class="box" wx:for="{{xmList}}" wx:key="id" bindtap="toxmDetail" data-id="{{item.goods_id}}">
 				<view class="left">
 					<image src="{{item.thumb}}" mode="aspectFill"></image>
 				</view>
@@ -71,20 +71,20 @@
 
 		<view class="list">
 
-			<view class="box" wx:for="{{groundList}}" wx:key = "id" >
+			<view class="box" wx:for="{{groundList}}" wx:key = "id"  >
 				<view class="left">
-					<image src=""></image>
+					<image src="{{item.thumb}}"></image>
 				</view>
 
 				<view class="right">
-					<view class="h3">{{item.title}}</view>
-					<view class="h4">{{item.sub_title}} </view>
+					<view class="h3">{{item.intro}}</view>
+					<view class="h4">{{item.name}} </view>
 
           <view class="bottom">
                <view class="lef">
-                 组内人数： <text>{{item.people}}人</text>
+                 组内人数： <text>{{item.join_people}}人</text>
                </view>      
-               <view class="rig" bindtap="togroudDetail" data-id='{{item.id}}'>
+               <view class="rig" bindtap="togroudDetail" data-id='{{item.group_id}}'>
                  查看小组
                </view>      
           </view>

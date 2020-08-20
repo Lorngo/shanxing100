@@ -14,13 +14,12 @@
 
 .toast .box {
   width: 628rpx;
-  height: 996rpx;
   border-radius: 20rpx;
   background-color: white;
   position: relative;
   display: flex;
   justify-content: center;
-  transition: all 1s;
+  transition: all .5s;
 }
 
 .toast .box .return {
@@ -32,6 +31,22 @@
   background-image: url('https://img.vrupup.com/web/wyl/shanxing100/common/close_btn.png');
   background-size: 100%;
   background-repeat: no-repeat;
+}
+
+.big{
+  height: 996rpx;
+}
+
+.big .list{
+  height: 955rpx;
+}
+
+.small {
+  height: 938rpx;
+}
+
+.small .list{
+  height: 897rpx;
 }
 
 .toast .show{
@@ -46,7 +61,6 @@
 
 .toast .box .list {
   width: 554rpx;
-  height: 960rpx;
   position: absolute;
   bottom: 0rpx;
 
@@ -61,6 +75,8 @@
   text-align: center;
   color: #040000;
 }
+
+
 
 .toast .box .list .showname {
   margin-top: 35rpx;
@@ -173,7 +189,7 @@
 
 .toast .box .list .box .input .smallInput {
   height: 30rpx;
-  width: 100%;
+  width: 95%;
   font-size: 28rpx;
   font-family: PingFang SC Medium, PingFang SC Medium-Medium;
   font-weight: 500;

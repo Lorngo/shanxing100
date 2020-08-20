@@ -6,7 +6,6 @@
 .page .banner {
   width: 750rpx;
   height: 330rpx;
-  background-color: red;
 }
 
 .page .banner .swiper {
@@ -19,9 +18,9 @@
   height: 100%;
 }
 
-.page .banner .swiper .img img {
-  width: 100%;
-  height: 100%;
+.page .banner .swiper .img image {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .page .group {
@@ -177,9 +176,7 @@
   margin-left: 24rpx;
 }
 
-.page  .scroll {
-  
-}
+.page .scroll {}
 
 .page .member .list {
   display: flex;
@@ -196,12 +193,12 @@
   justify-content: space-between;
 }
 
-.page .member .list .box:nth-child(1){
+.page .member .list .box:nth-child(1) {
   margin-top: 42rpx;
 }
 
 .page .member .list .box .left {
-  width: 420rpx;
+  width: 440rpx;
   height: 100%;
   display: flex;
 }
@@ -238,7 +235,7 @@
   font-size: 22rpx;
   font-family: PingFang SC Medium, PingFang SC Medium-Medium;
   font-weight: 500;
-    color: #666666;
+  color: #666666;
   padding: 3rpx 10rpx;
   background-color: rgba(237, 237, 237, 1);
   border-radius: 6rpx;
@@ -256,19 +253,44 @@
   margin-top: 16rpx;
 }
 
-.page .member .list .box .right{
+.page .member .list .box .right {
   height: 100%;
   flex: 1;
   text-align: right;
   line-height: 66rpx;
   font-size: 28rpx;
-font-family: PingFang SC Medium, PingFang SC Medium-Medium;
-font-weight: 500;
-color: #ff9525;
-margin-top: 5rpx;
+  font-family: PingFang SC Medium, PingFang SC Medium-Medium;
+  font-weight: 500;
+  color: #ff9525;
+  margin-top: 5rpx;
 }
 
-.page .member .list .box .noJoin{
- 
+.page .member .list .box .noJoin {
+
   color: #666666 !important;
+}
+
+.page .join {
+  width: 100%;
+  height: 100rpx;
+  border-top: 1rpx solid #EEEEEE;
+  position: fixed;
+  bottom: 0rpx;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page .join .button {
+  width: 676rpx;
+  height: 74rpx;
+  background: linear-gradient(#ffa524 0%, #ff9225 100%);
+  border-radius: 37rpx;
+  font-size: 30rpx;
+font-family: PingFang SC Bold, PingFang SC Bold-Bold;
+font-weight: 700;
+text-align: center;
+color: #ffffff;
+line-height: 74rpx;
 }

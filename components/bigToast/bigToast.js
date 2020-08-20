@@ -12,7 +12,10 @@ Component({
           ticketHead : '',
           num : '',
           phone : '',
-          email : ''
+          email : '',
+          defaultTxt : '	为保障每一位捐赠人的权益，中国扶贫基金会将为您开具电子捐赠票据，请您填写如上信息，完成提交后发送至您的电子邮箱。',
+          // defaultTxt : '	为了保证公开透明，请您进行票索取。'
+          type : 1
         }
      }
   },
@@ -81,6 +84,14 @@ Component({
       return false
     } else {
       return true
+    }
+  },
+   //验证电话号码
+   checkPhone(phone) { // 验证手机号
+    if (!(/^1[3456789]\d{9}$/.test(phone))) {
+      return false;
+    } else {
+      return true;
     }
   },
 },

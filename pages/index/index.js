@@ -1,5 +1,6 @@
 //index.js
 import api from '../../utils/api/api'
+import api2 from '../../utils/api/api2'
 import login from '../../utils/api/login'
 import tool from '../../utils/publics/tool'
 
@@ -74,6 +75,7 @@ Page({
       //在这里做页面初始化请求操作，可保证本地缓存中有用户的openid/userId
       this.getImage()
       this.getXmlist()
+      this.getGroup()
     }).catch(err => {
       console.log("err", err)
     })
@@ -90,10 +92,27 @@ Page({
     
   },
 
+  //获取小组列表
+  getGroup(){
+    var data = {
+      limit : 3
+    }
+    api2.getGroup(data).then(res => {
+      if(res.data.code == 1){
+        console.log('捐赠小组的列表信息===',res.data.data)
+        this.setData({
+          groundList : res.data.data.list
+        })
+      }else{
+        console.log('捐赠小组的错误信息====',res.data.msg)
+      }
+    })
+  },
+
   //跳转小组详情
   togroudDetail(e){
     let id = e.currentTarget.dataset.id
-    tool.jump_nav(`/pages/pages-list/group/group?id=${id}`)
+    tool.jump_nav(`/pages/pages-list/group/group?group_id=${id}`)
   },
 
   //跳转搜索
@@ -152,7 +171,7 @@ Page({
        if(res.data.code == 1){
          console.log('项目图文介绍的列表信息+====',res.data.data)
          this.setData({
-          xmList : res.data.data
+          xmList : res.data.data.list
          })
        }else{
          console.log('项目图文的错误信息====',res.data.msg)

@@ -1,5 +1,7 @@
 // pages/pages-list/group/group.js
 import tool from '../../../utils/publics/tool'
+import api2 from '../../../utils/api/api2'
+import api from '../../../utils/api/api'
 Page({
 
   /**
@@ -18,7 +20,8 @@ Page({
       {id : 3 , imgUrl : '' , title : '爱在日出前' , leave : 9 , time : '2020-01-01 10:12' , join : 1},
       {id : 3 , imgUrl : '' , title : '爱在日出前' , leave : 9 , time : '2020-01-01 10:12' , join : 1}
     ], //成员列表
-    scrollHeight : 0
+    scrollHeight : 0,
+    grounpDetail : {},//小组信息详情
   },
 
   /**
@@ -26,6 +29,8 @@ Page({
    */
   onLoad: function (options) {
     this.getSystemInfo()
+    this.getGroupDetail(options.group_id)
+    this.getGrouppeople(options.group_id)
   },
 
   /**
@@ -33,6 +38,24 @@ Page({
    */
   onReady: function () {
      
+  },
+
+  //获取项目详情
+  getGroupDetail(id){
+    var data = {
+      group_id : id
+    }
+
+    api2.getGroupDetail(data).then(res => {
+        if(res.data.code == 1){
+          console.log('项目详情的信息=====',res.data.data)
+          this.setData({
+            grounpDetail : res.data.data.group_info
+          })
+        }else{
+          console.log('项目详情的错误信息=====',res.data.msg)
+        }
+    })
   },
 
   //获取手机信息
@@ -45,6 +68,29 @@ Page({
     })
   },
 
+  //获取小组人员信息列表
+  getGrouppeople(id){
+    var data = {
+      group_id : id,
+      limit    :  4
+    }
+
+    api2.getGrouppeople(data).then(res => {
+      if(res.data.code == 1){
+        console.log('小组成员信息的列表====',res.data.data)
+        this.setData({
+          membersList : res.data.data.member_list
+        })
+
+      }else{
+        console.log('小组成员的错误信息=====',res.data.msg)
+      }
+    })
+  },
+
+  //加入小组
+
+
   //跳转到捐赠人
   toDonor(e){
     console.log(e)
@@ -54,6 +100,20 @@ Page({
     }else{
       return
     }
+  },
+
+  //加入小组
+  joinGroup(){
+    var data = {
+
+    }
+    api2.joinGroup(data).then(res => {
+      if(res.data.code == 1){
+        console.log('加入小组的信息===',res.data.data)
+      }else{
+        console.log('加入小组的错误信息===',res.data.msg)
+      }
+    })
   },
 
   //上拉刷新
