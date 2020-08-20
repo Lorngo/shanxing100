@@ -20,11 +20,18 @@
 		"checkInvalidKey": true,
 		"checkSiteMap": false,
 		"uploadWithSourceMap": true,
+<<<<<<< HEAD
+=======
+		"compileHotReLoad": false,
+>>>>>>> ea73bb90796873c5f71c74c6e3125722ab16b32b
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": true,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.0",
@@ -65,13 +72,19 @@
 			"list": [
 				{
 					"id": -1,
+<<<<<<< HEAD
 					"name": "项目详情",
 					"pathName": "pages/pages-list/xmDetail/xmDetail",
+=======
+					"name": "个人中心",
+					"pathName": "pages/pages-list/my/my",
+>>>>>>> ea73bb90796873c5f71c74c6e3125722ab16b32b
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
+<<<<<<< HEAD
 					"name": "首页",
 					"pathName": "pages/index/index",
 					"query": "",
@@ -96,6 +109,10 @@
 					"name": "邀请捐",
 					"pathName": "pages/pages-list/invite/invite",
 					"query": "",
+=======
+					"name": "用户报名成为志愿者",
+					"pathName": "pages/pages-list/signup/signup",
+>>>>>>> ea73bb90796873c5f71c74c6e3125722ab16b32b
 					"scene": null
 				}
 			]

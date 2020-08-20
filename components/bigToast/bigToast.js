@@ -1,34 +1,27 @@
 // components/bigToast/bigTosat.js
-import tool from '../../utils/publics/tool'
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    donnorInfo: {
-      type: Object,
-      value: {
-        name: '',
-        ticketHead: '',
-        num: '',
-        phone: '',
-        email: ''
-      }
-    }
+     donnorInfo : {
+        type : Object,
+        value : {
+          name : '',
+          ticketHead : '',
+          num : '',
+          phone : '',
+          email : ''
+        }
+     }
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    checked: false, //是否选中
-    showName: '',
-    ticketHead: '',
-    num: '',
-    phone: '',
-    email: '',
-    toastShow : false,
-    toastShow2 : false
+      checked :true ,//是否选中
+      showToast : true , //展现弹窗
   },
 
   /**
@@ -36,24 +29,22 @@ Component({
    */
   methods: {
     //切换选中
-    changeCheck() {
-      this.setData({
-        checked: !this.data.checked
-      })
+    changeCheck(){
+       this.setData({
+         checked : !this.data.checked
+       })
     },
-    onCancel(e) {
+    onCancel(e){
       this.triggerEvent('tapCancel', {})
     },
-    onConfirm(e) {
-      console.log(this.data.showName)
-      this.triggerEvent('tapConfirm', {
-
-      })
+    onConfirm(e){
+      this.triggerEvent('tapConfirm', {})
     },
     //返回
-    return () {
+    return(){
       this.triggerEvent('tapReturn', {})
 
+<<<<<<< HEAD
     },
 
     //表单提交
@@ -90,29 +81,16 @@ Component({
       return false
     } else {
       return true
+=======
+>>>>>>> ea73bb90796873c5f71c74c6e3125722ab16b32b
     }
   },
 
-  //验证电话号码
-  checkPhone(phone) { // 验证手机号
-    if (!(/^1[3456789]\d{9}$/.test(phone))) {
-      return false;
-    } else {
-      return true;
-    }
-  },
-  },
-  created(){
-    console.log('被创建了')
-    setTimeout(()=>{
-      this.setData({
-        toastShow : true
-      })
-    },200)
-    setTimeout(()=>{
-      this.setData({
-        toastShow2 : true
-      })
-    },400)
-  }
+    // ready(){
+    //   this.setData({
+    //     showToast : true
+    //   })
+    //   console.log('执行了')
+    // },
+
 })

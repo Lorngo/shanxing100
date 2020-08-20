@@ -6,7 +6,7 @@ Page({
   data: {
    baseurl:app.store.$state.ASSETSURL,
 	 gradeList:['公益新秀','乐于助人','古道热肠','乐善好施','积善成德','仁者爱人','大爱无疆'],
-   volunType:2,//判断是否是志愿者 1是  2不是
+   volunType:1,//判断是否是志愿者 1是  0不是
 	 brightStar:[1,2],//亮的星星数
 	 darkStar:[1],//暗的星星数
 	 isMedal:true,//是否显示勋章弹窗
@@ -14,19 +14,29 @@ Page({
    donateData:{}//捐赠信息
 	},
   onLoad: function (options) {
-		console.log(app.store.getState());
+		console.log(app.store.getState().userInfo.user_info);
     this.setData({
 			userInfo:wx.getStorageSync('userInfo').user_info
 		})
   },
   onShow: function () {
+    this.getUserInfo()
+  },
+	//获取用户信息
+	getUserInfo(){
 		api.getUserInfo().then(res=>{
 			console.log("用户信息获取",res);
-			this.setData({
-				donateData:res.data.data.user_info
-			})
+			if(res.data.code==1)
+			{
+				this.setData({
+					donateData:res.data.data.user_info,
+					// volunType:res.data.data.user_info.is_volunteer
+				})
+			}else{
+				tool.alert(res.data.msg)
+			}
 		})
-  },
+	},
 	//获取用户授权
 	getInfo(e){
 		if(e.detail.errMsg=="getUserInfo:ok")
@@ -51,7 +61,7 @@ Page({
 		if(url==1)
 		{
 			url = "../volunt-info/volunt-info"
-		}else if(url==2)
+		}else if(url==0)
 		{
 			url = "../signup/signup"
 		}

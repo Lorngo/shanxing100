@@ -1,33 +1,29 @@
 <!--components/bigToast/bigTosat.wxml-->
 <view class="toast">
 
-	<block wx:if="{{showToast == true}} " >
-		<view class="box {{toastShow ? 'showToast' : 'hidToast'}}">
+	<block wx:if="{{showToast == true}}">
+		<view class="box {{showToast ? 'show' : 'hidden'}}">
 			<view class="return" bindtap="return">
 
 			</view>
-			<view class="list" wx:if="{{toastShow2}}">
-				<form bindsubmit="formSubmit">
-					<view class="title">
-						填写信息
-					</view>
 
-					<view class="showname">对外公示名称<text class="txt">(对外公示，将展示对外公示姓名)</text></view>
+			<view class="list">
+				<view class="title">
+					填写信息
+				</view>
 
-					<view class="inp">
-						<input name='showName' class="smallInput"  value="{{showName}}"></input>
-					</view>
+				<view class="showname">对外公示名称<text class="txt">(对外公示，将展示对外公示姓名)</text></view>
 
-					<view class="hidname">
-						<view bindtap="changeCheck" class="icon {{checked ? 'checked' : 'noCheck'}}"></view>
-						<view>匿名</view>
-					</view>
+				<view class="inp">
+					<input class="smallInput"></input>
+				</view>
 
-					<view class="box ticket">
-						<view class="head">
-							票据抬头
-						</view>
+				<view class="hidname">
+					<view bindtap="changeCheck" class="icon {{checked ? 'checked' : 'noCheck'}}"></view>
+					<view>匿名</view>
+				</view>
 
+<<<<<<< HEAD
 						<view class="input">
 							<input name='ticketHead' class="smallInput" value="{{ticketHead}}" placeholder="请填写票据抬头" placeholder-class="inputPla"></input>
 						</view>
@@ -41,8 +37,19 @@
 						<view class="input">
 							<input name='num' class="smallInput" value="{{num}}" type="number" placeholder="请填写正确的税号" placeholder-class="inputPla"></input>
 						</view>
+=======
+				<view class="box ticket">
+					<view class="head">
+						票据抬头
 					</view>
 
+					<view class="input">
+						<input class="smallInput" placeholder="湖南省长沙市开福区" placeholder-class="inputPla"></input>
+>>>>>>> ea73bb90796873c5f71c74c6e3125722ab16b32b
+					</view>
+				</view>
+
+<<<<<<< HEAD
 					<view class="box num">
 						<view class="head">
 							手机号
@@ -51,30 +58,54 @@
 						<view class="input">
 							<input name='phone' class="smallInput" value="{{phone}}" maxlength='11' type="number" placeholder="请填写您的手机号" placeholder-class="inputPla"></input>
 						</view>
+=======
+				<view class="box num">
+					<view class="head">
+						税号
+>>>>>>> ea73bb90796873c5f71c74c6e3125722ab16b32b
 					</view>
 
-					<view class="box num">
-						<view class="head">
-							邮箱
-						</view>
+					<view class="input">
+						<input class="smallInput" placeholder="12548521325886111" placeholder-class="inputPla"></input>
+					</view>
+				</view>
 
+<<<<<<< HEAD
 						<view class="input">
 							<input name='email' class="smallInput" value="{{email}}" placeholder="请输入正确的邮箱" placeholder-class="inputPla"></input>
 						</view>
+=======
+				<view class="box num">
+					<view class="head">
+						手机号
+>>>>>>> ea73bb90796873c5f71c74c6e3125722ab16b32b
 					</view>
 
-					<view class="txt">
-						为保障每一位捐赠人的权益，中国扶贫基金会将为您
-						开具电子捐赠票据，请您填写如上信息，完成提交后
-						发送至您的电子邮箱。
+					<view class="input">
+						<input class="smallInput" placeholder="15865232569" placeholder-class="inputPla"></input>
+					</view>
+				</view>
+
+				<view class="box num">
+					<view class="head">
+						邮箱
 					</view>
 
-					<view class="button">
-						<view class="left" bindtap="onCancel">放弃开票</view>
-						<button class="right" form-type="submit" >提交</button>
+					<view class="input">
+						<input class="smallInput" placeholder="125864253@qq.com" placeholder-class="inputPla"></input>
 					</view>
-				</form>
+				</view>
 
+				<view class="txt">
+					为保障每一位捐赠人的权益，中国扶贫基金会将为您
+					开具电子捐赠票据，请您填写如上信息，完成提交后
+					发送至您的电子邮箱。
+				</view>
+
+				<view class="button">
+					<view class="left" bindtap="onCancel">放弃开票</view>
+					<view class="right" bindtap="onConfirm">提交</view>
+				</view>
 			</view>
 		</view>
 	</block>

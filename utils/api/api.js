@@ -27,4 +27,11 @@ export default {
 	goDonate:(data, url = 'api/order/submit_order') => { return myRequest(data, url) },
 	//获取用户信息
 	getUserInfo:(data, url = 'api/user/user_info') => { return myRequest(data, url) },
+<<<<<<< HEAD
+=======
+	//获取社团列表
+	getMassList:(data, url = 'api/mass/mass_list') => { return myRequest(data, url) },
+	//申请报名成为志愿者
+	applyVolun:(data, url = 'api/user/apply_volunteer') => { return myRequest(data, url) },
+>>>>>>> ea73bb90796873c5f71c74c6e3125722ab16b32b
 }

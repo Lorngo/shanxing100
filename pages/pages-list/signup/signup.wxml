@@ -1,23 +1,27 @@
 <!-- 非志愿者报名页面xw -->
 <view class="volunt_cont">
 	<view class="hint">提示：本次志愿者注册仅用于档案信息管理，无其他用途</view>
+	<form bindsubmit="goAlpay">
 	<view class="volunt_box">
 		<view class="info_box">
 			<view class="info_title">姓名</view>
-			<input style="flex: 2.6;" type="text" placeholder-class="place_color" maxlength="16" placeholder="请填写真实姓名,一经填写,则无法修改" class="info_input"/>
+			<input name="name" style="flex: 2.6;" type="text" placeholder-class="place_color" maxlength="16" placeholder="请填写真实姓名,一经填写,则无法修改" class="info_input"/>
 		</view>
 		<view class="info_box">
 			<view class="info_title">手机号</view>
-			<input type="number"  placeholder-class="place_color" maxlength="11" placeholder="请填写手机号" class="info_input"/>
+			<input name="mobile" type="number"  placeholder-class="place_color" maxlength="11" placeholder="请填写手机号" class="info_input"/>
 		</view>
-		<view class="info_box no_border">
-			<view class="info_title">身份</view>
+		<view class="info_box_s no_border">	
+			<view class="school_box">
+		  <view class="info_title">身份</view>
 			<picker  bindchange="changePick" data-type="2" mode="selector" value="{{index}}" range="{{identList}}">
 			    <view class="info_title" style="color: {{identname?'':'#999'}};">
 				      {{identname?identname:'请选择当前身份'}}
 							<image src="{{baseurl}}/common/index_icon_01.png" mode="aspectFit" class="more_icon"></image>
 				  </view>
 			</picker>
+			</view>
+			<view class="hints" hidden="{{identKey!=2}}">提示：若未满18周岁，请在监护人陪同下共同完成。</view>
 		</view>
 	</view>
 	<view class="volunt_box">
@@ -32,50 +36,57 @@
 		</view>
 		<view class="info_box">
 				<view class="info_title">具体地址</view>
-				<input type="text" placeholder-class="place_color" placeholder="请填写具体地址" class="info_input"/>
+				<input name="address" type="text" placeholder-class="place_color" placeholder="请填写具体地址" class="info_input"/>
 			</view>
-			<view class="info_box">
+			<view class="info_box" style="background-color: {{identKey==0?'#f5f5f5':''}};">
 					<view class="info_title">行业</view>
-					<input type="text" placeholder-class="place_color" placeholder="请填写所处行业" class="info_input"/>
+					<input name="industry" type="text" placeholder-class="place_color" disabled="{{identKey==0}}" placeholder="请填写所处行业" class="info_input"/>
 				</view>
-				<view class="info_box no_border">
+				<view class="info_box no_border" style="background-color: {{identKey==0?'#f5f5f5':''}};">
 						<view class="info_title">单位</view>
-						<input type="text" placeholder-class="place_color" placeholder="请填写所处单位" class="info_input"/>
+						<input name="vocation" type="text" placeholder-class="place_color" disabled="{{identKey==0}}" placeholder="请填写所处单位" class="info_input"/>
 					</view>
 		</view>
 	<view class="volunt_box">
-		<view class="info_box_s">
-			
+		<view class="info_box_s" style="background-color: {{identKey==2?'#f5f5f5':''}};">
 			<view class="school_box">
 		  <view class="info_title">高校</view>
-			<picker  bindchange="changePick" data-type="1" mode="selector" value="{{index}}" range="{{schooList}}">
+			<!-- <picker  bindchange="changePick" data-type="1" mode="selector" value="{{index}}" range="{{schooList}}">
 			    <view class="info_title" style="color: {{schoolname?'':'#999'}};">
 				      {{schoolname?schoolname:'请选择所在学校'}}
 							<image src="{{baseurl}}/common/index_icon_01.png" mode="aspectFit" class="more_icon"></image>
 				  </view>
-			</picker>
-		  <!-- <input  placeholder-class="place_color" type="text" placeholder="请填写所在学校名称" maxlength="16" class="info_input"/> -->
+			</picker> -->
+		  <input  placeholder-class="place_color" disabled="true" value="{{massList[massKey].school_name}}" type="text" placeholder="请填写所在学校名称"  class="info_input"/>
 			</view>
-			<view class="hints">提示：本次志愿者注册仅用于档案信息管理，无其他用途</view>
+			<view class="hints">提示：若未找到您所在高校请及时联系高校合作客服</view>
 		</view>
-		<view class="info_box">
+		<view class="info_box" style="background-color: {{identKey==2?'#f5f5f5':''}};">
 			<view class="info_title">社团</view>
-			<input  placeholder-class="place_color" type="text" placeholder="请填写社团名称" maxlength="16" class="info_input"/>
+			<picker disabled="{{identKey==2}}" bindchange="changePick" data-type="1" mode="selector" range-key="mass_name" range="{{massList}}">
+			    <view class="info_title" style="color: {{massName?'':'#999'}};">
+				      {{massName?massName:'请选择所在社团'}}
+							<image src="{{baseurl}}/common/index_icon_01.png" mode="aspectFit" class="more_icon"></image>
+				  </view>
+			</picker>
+			<!-- <input  placeholder-class="place_color" type="text" placeholder="请填写社团名称" maxlength="16" class="info_input"/> -->
 		</view>
-		<view class="info_box">
+		<view class="info_box" style="background-color: {{identKey==2?'#f5f5f5':''}};">
 			<view class="info_title">邮箱</view>
-			<input type="text" placeholder-class="place_color"  placeholder="请填写邮箱地址" class="info_input"/>
+			<input name="email" disabled="{{identKey==2}}" type="text" placeholder-class="place_color"  placeholder="请填写邮箱地址" class="info_input"/>
 		</view>
 	</view>
 	<view class="up_img">
 		<view class="info_title">上传照片<text style="color: #999999;font-size: 24rpx;">（个人一寸照片，大小不超过2M）</text></view>
-	  <view class="up_box">
-			<image src="{{baseurl}}/common/index_icon_03.png" mode="aspectFit" class="up_icon"></image>
-		  <view class="up_text">上传照片</view>
+	  <view class="up_box" bindtap="oploadImg">
+			<image wx:if="{{imgUrl}}" src="{{imgUrl}}" mode="aspectFit" class="showimg"></image>
+			<image wx:if="{{!imgUrl}}" src="{{baseurl}}/common/index_icon_03.png" mode="aspectFit" class="up_icon"></image>
+		  <view wx:if="{{!imgUrl}}" class="up_text">上传照片</view>
 		</view>
 	</view>
   <view class="volunt_btn">
 		<view class="btn_box1" hover-class="back_act" bindtap="goBack">返回</view>
-		<view class="btn_box2" hover-class="back_btn" bindtap="goAlpay">报名</view>
+		<button class="btn_box2" hover-class="back_btn" form-type="submit">报名</button>
 	</view>
+	</form>
 </view>
