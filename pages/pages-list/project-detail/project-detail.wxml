@@ -24,6 +24,11 @@
 		捐赠
 	</view>
 </view>
+
+<!-- 支付成功后的弹窗 -->
+<donnorToast wx:if="{{isFill}}" bindtapReturn="closeShow" bindtapCancel="onCancel" bindtapConfirm="onConfirm"></donnorToast>
+
+
 <!-- 捐赠金额的选择弹窗 -->
 <!-- <view class="dona_bg" hidden="{{isMoney}}">
 	<view class="dona_box">

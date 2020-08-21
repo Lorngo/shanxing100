@@ -8,6 +8,7 @@
   align-items: center;
   position: fixed;
   top: 0rpx;
+	z-index: 999999;
 }
 
 .toast {
@@ -100,7 +101,7 @@ font-weight: 700;
 .toast .but2{
   width: 448rpx;
   height: 70rpx;
-  margin: 46rpx auto;
+  margin: 0rpx auto;
   display: flex;
   justify-content: center;
 }

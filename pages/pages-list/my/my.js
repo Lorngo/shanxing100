@@ -5,7 +5,10 @@ import api from "../../../utils/api/api.js"
 Page({
   data: {
    baseurl:app.store.$state.ASSETSURL,
+<<<<<<< HEAD
 	 gradeList:['公益新秀','乐于助人','古道热肠','乐善好施','积善成德','仁者爱人','大爱无疆'],
+=======
+>>>>>>> ebff5c166947f8de5a2deec9d4d6004f1d6cf5d2
    volunType:0,//判断是否是志愿者 1是  0不是
 	 brightStar:[1,2],//亮的星星数
 	 darkStar:[1],//暗的星星数

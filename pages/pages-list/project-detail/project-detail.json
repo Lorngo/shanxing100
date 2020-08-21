@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+		"donnorToast" : "/components/bigToast/bigToast",
+		"my-Toast" : "/components/toast/toast"
+	},
 	"navigationBarTitleText":"列表详情"
 }

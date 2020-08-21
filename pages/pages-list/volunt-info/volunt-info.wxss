@@ -29,14 +29,14 @@
   margin: 0 30rpx;
 	border-bottom: 1px solid #EEEEEE;
 }
-.info_box:nth-child(3n)
+.info_box:last-child
 {
 	border: none;
 }
 .info_title{
 	font-size: 30rpx;
 	font-weight: 500;
-	color: #666666;
+	color: #333;
 	flex: 1;
 }
 .info_input{
@@ -80,4 +80,10 @@
 	color: #ffffff;
 	line-height: 74rpx;
 	margin-left: 48rpx;
+}
+.back_act{
+	background: rgba(251,216,169,1);
+}
+.back_btn{
+	background: linear-gradient(#ffa524 100%, #ff9225 0%);
 }
