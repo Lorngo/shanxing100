@@ -31,7 +31,7 @@
 		<view class="screen" wx:if="{{showSelect}}">
 
 			<view class="sxlist {{anmSelect == false ? 'hidden' : 'show'}}">
-				<view class="box {{selectIndex == index ? 'check' : ''}}" bindtap="changeIndex" data-ind="{{index}}" wx:for="{{leftList}}" wx:key="index">{{item}}</view>
+				<view  class="box {{selectIndex == index ? 'check' : ''}}" bindtap="changeIndex" data-ind="{{index}}" wx:for="{{leftList}}" wx:key="index">{{item}}</view>
 			</view>
 
 		</view>
@@ -47,18 +47,19 @@
 
 				<view class="left">
 					<view class="icon">队伍</view>
+					<image src="{{item.banner}}" mode="aspectFill"></image>
 				</view>
 				<view class="right">
-					<view class="h3">{{item.title}}</view>
+					<view class="h3">{{item.goods_name}}</view>
 					<view class="h4">
-						发起人: <text>{{item.peopleName}}</text>
+						发起人: <text>{{item.name}}</text>
 					</view>
 					<view class="bot">
 						<view class="lef">
-							<view class="h5">筹款金额：<text class="text">{{item.price}}元</text></view>
-							<view class="h5">已有助力者：<text class="text">{{item.people}}人</text> </view>
+							<view class="h5">筹款金额：<text class="text">{{item.amount}}元</text></view>
+							<view class="h5">已有助力者：<text class="text">{{item.join_people}}人</text> </view>
 						</view>
-						<view class="rig">加入邀请捐</view>
+						<view class="rig" bindtap="toInvite" data-id="{{item.order_id}}">加入邀请捐</view>
 					</view>
 				</view>
 			</view>

@@ -278,6 +278,11 @@ page {
   position: relative;
 }
 
+.grounpList .box .left  image{
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .grounpList .box .left .icon {
   top: 0rpx;
   left: 0rpx;

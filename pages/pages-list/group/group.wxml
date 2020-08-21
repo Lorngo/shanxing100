@@ -84,8 +84,8 @@
 		</scroll-view>
 	</view>
 
-	<view class="join">
-	     <view class="button">加入</view>
+	<view class="join" wx:if="{{grounpDetail.is_join == 0}}">
+	     <view class="button" bindtap="join">加入</view>
 	</view>
 
 

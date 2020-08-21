@@ -43,6 +43,11 @@ color: #666666;
   text-align: right;
 }
 
+.page .list .box  .right view{
+  width: 100%;
+  text-align: right;
+}
+
 
 
 .page .list .box .rightFlex .smallBox{

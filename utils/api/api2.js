@@ -17,7 +17,7 @@ export default {
    */
 	//上传图片
 	sengImage : (data, url = 'api/upload/oss_upload') => { return myRequest(data, url) },
-  //获取邀请捐列表
+  //提交邀请捐
   getInvite : (data, url = 'api/order/submit_order') => { return myRequest(data, url) },
   //捐赠小组
   getGroup : (data, url = 'api/group/group_list') => { return myRequest(data, url) },
@@ -27,4 +27,8 @@ export default {
   getGrouppeople :  (data, url = 'api/group/member_list') => { return myRequest(data, url) },
   //加入小组
   joinGroup      :  (data, url = 'api/group/join_group') => { return myRequest(data, url) },
+  //获取邀请捐列表
+  getInviteList  : (data, url = 'api/order/order_list') => { return myRequest(data, url) },
+  //邀请捐详情
+  getInviteDetail : (data, url = 'api/order/order_detail') => { return myRequest(data, url) },
 }

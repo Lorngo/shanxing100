@@ -28,6 +28,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    this.setData({
+      group_id : options.group_id
+    })
+
     this.getSystemInfo()
     this.getGroupDetail(options.group_id)
     this.getGrouppeople(options.group_id)
@@ -88,9 +93,6 @@ Page({
     })
   },
 
-  //加入小组
-
-
   //跳转到捐赠人
   toDonor(e){
     console.log(e)
@@ -102,14 +104,22 @@ Page({
     }
   },
 
+  join(){
+   
+     this.joinGroup()
+
+
+  },
+
   //加入小组
   joinGroup(){
     var data = {
-
+      group_id : this.data.group_id
     }
     api2.joinGroup(data).then(res => {
       if(res.data.code == 1){
         console.log('加入小组的信息===',res.data.data)
+        this.getGrouppeople()
       }else{
         console.log('加入小组的错误信息===',res.data.msg)
       }

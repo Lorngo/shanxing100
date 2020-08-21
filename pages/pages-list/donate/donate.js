@@ -53,6 +53,7 @@ Page({
         console.log('发起邀请捐成功信息====', res.data.data)
       } else {
         console.log('发送邀请卷的错误信息+===', res.data.msg)
+        tool.alert(res.data.msg)
       }
     })
   },
@@ -91,12 +92,10 @@ Page({
 
   //上传按钮
   formSubmit(e) {
-    console.log('1111')
-    console.log(e)
-    var money = e.detail.value.money
+    var money = 200
     var slogan = e.detail.value.slogan
-    if (money <= 200) {
-      tool.alert('每个队伍捐赠金额最少200元')
+    if (money != 200) {
+      tool.alert('每个队伍捐赠金额为200元')
       return
     }
     if (this.data.donateImgurl == '') {

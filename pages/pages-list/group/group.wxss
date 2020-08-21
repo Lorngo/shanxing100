@@ -210,6 +210,11 @@
   background-color: orange;
 }
 
+.page .member .list .box .left .icon image{
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .page .member .list .box .left .txt {
   flex: 1;
   height: 100%;

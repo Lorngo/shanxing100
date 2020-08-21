@@ -2,6 +2,7 @@
 
 let app = new getApp()
 import WxCountUp from '../../../utils/countUp.min.js'
+import api2 from '../../../utils/api/api2.js'
 
 Page({
 
@@ -56,12 +57,45 @@ Page({
       }
     },
     showsmallToast: false, //温馨提示
+    order_id : '' , //邀请捐id
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+  
+    var order_id = options.order_id
+    this.setData({
+      order_id
+    })
+
+    this.countDown()
+   
+     this.getInviteDetail(order_id)
+
+
+  },
+
+  //邀请捐详情
+  getInviteDetail(order_id){
+    var data = {
+      order_id,
+
+    }
+
+    api2.getInviteDetail(data).then(res => {
+      if(res.data.code == 1){
+        console.log('邀请捐详情的信息=====',res.data.data)
+      }else{
+        console.log('邀请捐详情的错误信息====',res.data.msg)
+      }
+    })
+
+  },
+
+  //倒计时
+  countDown(){
     var hour = this.data.hour
     var day  = this.data.day
     if(this.data.hour != 0){
@@ -78,7 +112,6 @@ Page({
           clearInterval(timer)
          }
        }else{
-        console.log(num)
         this.countUp = new WxCountUp('hour', num, { decimalPlaces:0, useGrouping: false }, this)
         this.setData({
          hour : num
@@ -87,8 +120,10 @@ Page({
       },1000)
     
     }
-   
   },
+
+
+
   //置顶
   toTop(e){
     var id = e.currentTarget.dataset.id

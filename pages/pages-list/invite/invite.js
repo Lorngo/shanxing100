@@ -53,7 +53,8 @@ Page({
       },
     ], //热门推荐
     select: 0, //下拉框选中
-    leftList: ['全部邀请捐', '进行中', '已结束'], //左边列表
+    leftList: ['进行中', '未完成', '已完成'], //左边列表
+    rightList : ['2-3人','3-5人','5人以上'], //右边列表
     selectIndex: 0, //下拉框下标
     showSelect: false, //展示下拉框
     anmSelect: false, //动画的下拉框
@@ -65,7 +66,7 @@ Page({
    */
   onLoad: function (options) {
 
-     this.getInvite()
+     this.getInviteList(0)
 
   },
    
@@ -87,6 +88,12 @@ Page({
   //切换下拉框下标
   changeIndex(e) {
     var index = e.currentTarget.dataset.ind
+    tool.loading()
+   if(this.data.select == 1){
+    this.getInviteList(index+1)
+   }else{
+    this.getInviteList(0,index)
+   }
 
     this.setData({
       selectIndex: index
@@ -101,23 +108,28 @@ Page({
         select: type,
       })
     }
- 
-
-   console.log('select====',this.data.select)
-   console.log('type=====',type)
-
     if (this.data.showSelect == false) {
         this.setData({
           showSelect: !this.data.showSelect
         })
         setTimeout(() => {
           this.setData({
-            anmSelect: !this.data.anmSelect
+            anmSelect: !this.data.anmSelect,
           })
         }, 100)
         this.setData({
           select: type,
         })
+
+        if(this.data.select == 1){
+          this.setData({
+            leftList :['已完成','进行中', '未完成' ],
+          })
+        }else{
+          this.setData({
+            leftList :['2-3人','3-5人','5人以上'],
+          })
+        }
 
     } else {
       if (this.data.select == type) {
@@ -126,7 +138,7 @@ Page({
         })
         setTimeout(() => {
           this.setData({
-            anmSelect: !this.data.anmSelect
+            anmSelect: !this.data.anmSelect,
           })
         }, 100)
       } else {
@@ -142,6 +154,15 @@ Page({
             this.setData({
               anmSelect: !this.data.anmSelect
             })
+            if(this.data.select == 1){
+              this.setData({
+                leftList :['已完成','进行中', '未完成' ],
+              })
+            }else{
+              this.setData({
+                leftList :['2-3人','3-5人','5人以上'],
+              })
+            }
           }, 500)
         }, 100)
       }
@@ -153,14 +174,41 @@ Page({
 
   },
 
-  //获取列表
-  getInvite(){
-    var data = {
+  //加入邀请捐
+  toInvite(e){
+   var id = e.currentTarget.dataset.id
 
+   tool.jump_nav(`/pages/pages-list/donor/donor?order_id=${id}`)
+  },
+
+  //获取列表
+  getInviteList(status,join_people){
+    if(join_people == undefined){
+      var data = {
+        status,
+      }
+    }else{
+      if(join_people == 0){
+        join_people = '2,3'
+      }else if(join_people == 1){
+        join_people = '3,5'
+      }else{
+        join_people = '>5'
+      }
+      var data = {
+        status,
+        join_people
+      }
     }
-    api2.getInvite(data).then(res => {
+    api2.getInviteList(data).then(res => {
       if(res.data.code == 1){
         console.log('邀请捐列表数据====',res.data.data)
+       this.setData({
+        hotList : res.data.data.list,
+        showSelect : false,
+        anmSelect : false
+       })
+       tool.loading_h()
       }else{
         console.log('邀请捐列表的错误信息====',res.data.msg)
       }
