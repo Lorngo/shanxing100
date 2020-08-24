@@ -31,4 +31,7 @@ export default {
   getInviteList  : (data, url = 'api/order/order_list') => { return myRequest(data, url) },
   //邀请捐详情
   getInviteDetail : (data, url = 'api/order/order_detail') => { return myRequest(data, url) },
+  //邀请捐人员置顶
+  inviteTop      : (data, url = 'api/order/sub_order_top') => { return myRequest(data, url) },
+
 }

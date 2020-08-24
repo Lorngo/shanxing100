@@ -8,10 +8,10 @@
     <view class="num">
        <view class="box">
           <view class="left">
-           筹款金额： <text>25800元</text>
+           筹款金额： <text>{{xmDetail.amount}}元</text>
           </view>
           <view class="right">
-           在捐人数： <text>2552人</text>
+           在捐人数： <text>{{xmDetail.join_people}}人</text>
           </view>
        </view>
     </view>
@@ -43,6 +43,53 @@
         <view bindtap="donation">直接捐赠</view>
      </view>
   </view>
+</view>
+
+
+<view class="toast" wx:if="{{showToast2}}">
+
+      <view class=" {{anmToast2 ? 'show box' : 'hid box'}}">
+			  
+           <view class="return" bindtap="closeToast">
+					    
+					 </view>
+
+			     <view class="list">
+					 
+                 <view class="title">选择金额</view>
+
+                 <view class="moneyList">
+                   
+                     <view class="{{moneyIndex == index ? 'changeColor' : ''}}"  wx:for="{{moneyList}}" wx:key='*this' bindtap="changeIndex" data-ind="{{index}}">{{item}}</view>
+
+                 </view>
+
+
+					    <view class="title">
+							    自定义金额 <text>（输入金额为整数）</text>
+							</view>
+
+							<view class="input">
+							    <input placeholder="{{plaInput}}" type="number" placeholder-class="plainput" value="{{donnorMoney}}" bindinput="changeMoney"></input>
+							</view>
+					 
+              <view class="check">
+							   <view class="{{donnorCheck ? 'checked' : 'cir'}}" bindtap="changeCheck"></view>
+							   <view class="text">
+								  我已经阅读并同意<text>《邀请捐用户协议》</text>
+								 </view>
+							</view>
+
+							<view class="button">
+							  
+								<view bindtap="sendInvite">确认</view>
+							
+							</view>
+
+					 </view>
+
+			</view>
+
 </view>
 
 <my-Toast wx:if="{{toastShow}}" bindtapConfirm='confirm' bindtapReturn='return'  bindtapCancel="cancel"  confimText="{{toastOptions.confimText}}"></my-Toast>

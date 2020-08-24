@@ -51,6 +51,7 @@ Page({
     api.getInvite(data).then(res => {
       if (res.data.code == 1) {
         console.log('发起邀请捐成功信息====', res.data.data)
+        tool.jump_swi('/pages/pages-list/invite/invite')
       } else {
         console.log('发送邀请卷的错误信息+===', res.data.msg)
         tool.alert(res.data.msg)

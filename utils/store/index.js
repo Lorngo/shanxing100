@@ -35,8 +35,8 @@ export default new Store({
     onShow() {
       getApp().globalData.innerAudioContext && this.setData({ isPause: getApp().globalData.innerAudioContext.paused })//背景音乐相关
     },
-    onShareAppMessage(res) {
-      console.log("【store监听转发事件】", res)
-    }
+    // onShareAppMessage(res) {
+    //   console.log("【store监听转发事件】", res)
+    // }
   }
 })

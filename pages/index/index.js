@@ -24,46 +24,9 @@ Page({
         imgUrl: ''
       }
     ], //轮播图列表
-    xmList: [{
-        id: 1,
-        title: '今天请为天使点赞',
-        sub_title: '你守护世界，我们守护你！',
-        price: 25800,
-        people: 2552
-      },
-      {
-        id: 2,
-        title: '今天请为天使点赞',
-        sub_title: '你守护世界，我们守护你！',
-        price: 25800,
-        people: 2552
-      },
-      {
-        id: 3,
-        title: '今天请为天使点赞',
-        sub_title: '你守护世界，我们守护你！',
-        price: 25800,
-        people: 2552
-      },
+    xmList: [
     ], //项目列表
-    groundList: [{
-        id: 1,
-        title: '阳光四人组',
-        sub_title: '民办童的梦实验小学 ',
-        people: '188'
-      },
-      {
-        id: 2,
-        title: '阳光四人组',
-        sub_title: '民办童的梦实验小学 ',
-        people: '188'
-      },
-      {
-        id: 3,
-        title: '阳光四人组',
-        sub_title: '民办童的梦实验小学 ',
-        people: '188'
-      },
+    groundList: [
     ]
 
   },
@@ -73,9 +36,7 @@ Page({
     login.login().then(res => {
       console.log("【静默登录成功】", res)
       //在这里做页面初始化请求操作，可保证本地缓存中有用户的openid/userId
-      this.getImage()
-      this.getXmlist()
-      this.getGroup()
+     
     }).catch(err => {
       console.log("err", err)
     })
@@ -180,6 +141,12 @@ Page({
 
 
 
+  },
+
+  onShow(){
+    this.getImage()
+    this.getXmlist()
+    this.getGroup()
   },
 
   onShareAppMessage() {}

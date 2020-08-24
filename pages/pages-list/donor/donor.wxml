@@ -6,19 +6,20 @@
 		<view class="top">
 			<view class="left">
 				<view>队伍</view>
+				<image src="{{orderList.thumb}}" mode="aspectFill"></image>
 			</view>
 
 			<view class="right">
 				<view class="title">
-					<view>今天请为天使点赞</view>
-					<view>进行中</view>
+					<view>{{orderList.good_name}}</view>
+					<view>{{orderList.team_status == 0 ? '进行中' : orderList.team_status == 1 ? '已完成' : orderList.team_status == 2 ? '未完成' : ''}}</view>
 				</view>
 				<view class="sub_title">
-					发起人：<text>张三</text>
+					发起人：<text>{{orderList.name}}</text>
 				</view>
 
 				<view class="slogan">
-					邀请捐口号：<text>你守护世界，我们守护你！</text>
+					邀请捐口号：<text>{{orderList.slogan}}</text>
 				</view>
 			</view>
 		</view>
@@ -37,14 +38,14 @@
 				<view class="box">
 
 					<view class="num">
-						<view>25864</view>
+						<view>{{orderList.amount}}</view>
 						<view>累计金额（元）</view>
 					</view>
 
 				</view>
 				<view class="box">
 					<view class="num">
-						<view>1260</view>
+						<view>{{orderList.join_people}}</view>
 						<view>已有助力者（人）</view>
 					</view>
 				</view>
@@ -69,7 +70,7 @@
 				</view>
 			</view>
 
-			<view class="user">
+			<!-- <view class="user">
 
 				<view class="left">
 					<view class="icon">
@@ -95,7 +96,7 @@
 						2020-01-01 10:12 加入小组
 					</view>
 				</view>
-			</view>
+			</view> -->
 		</view>
 	</view>
 
@@ -107,7 +108,7 @@
 
 					<view class="left">
 						<view class="icon">
-							<image src="" mode="aspectFill"></image>
+							<image src="{{item.avatar}}" mode="aspectFill"></image>
 							<view class="top" style="background-image: url('{{baseUrl}}/common/index_icon_06.png');" bindtap="toTop" data-id='{{item.id}}'>
 
 							</view>
@@ -115,23 +116,23 @@
 
 						<view class="txt">
 							<view class="title">
-								{{item.userName}} <text>{{item.leave >= 1 && item.leave <= 3 ? '公益新秀' : item.leave > 3 && item.leave <= 6 ? '乐于助人' : item.leave > 6 && item.leave <= 9 ? '古道热肠' : item.leave > 9 && item.leave <= 12 ? '乐善好施' : item.leave > 13 && item.leave <= 15 ? '积善成德' : item.leave > 15 && item.leave <= 19 ? '仁者爱人' : item.leave >= 20 ? '大爱无疆' : '' }}</text>
+								{{item.nickname}} <text>{{item.rank}}</text>
 							</view>
 							<view class="txtIcon">
 								<!-- <view>
 									已置顶
 									</view> -->
-								<view class="identity">{{item.identity}}</view>
+								<view class="identity {{item.is_myself == 1 ? 'red' : ''}}">{{item.is_myself == 1 ? '发起人' : item.is_owner == 1 ? '参与者' : ''}}</view>
 							</view>
 						</view>
 					</view>
 					<view class="right">
 
 						<view class="h3">
-							捐赠金额：<text>{{item.money}}元</text>
+							捐赠金额：<text>{{item.amount}}元</text>
 						</view>
 						<view class="h4">
-							{{item.time}} 加入小组
+							{{item.pay_time}} 加入小组
 						</view>
 
 					</view>
@@ -139,22 +140,75 @@
 			</scroll-view>
 		</view>
 		<!-- 底部按钮 -->
-		<view class="but">
-			<view bindtap="showToast">邀请助力者</view>
-		</view>
+	
 
 	</view>
+
+		<view class="but">
+
+		  <view class='box' wx:if="{{orderList.is_owner == 1 || orderList.is_owner == 0 && orderList.is_join == 1}}">
+			  <button open-type="share">邀请助力者</button>
+			  <button bindtap="toDonation">发起捐赠</button>
+			</view>
+
+			<button open-type="share" wx:if="{{orderList.is_owner == 0 && orderList.is_join == 0}}">加入捐赠</button>
+
+
+
+			
+		
+		
+		</view>
 
 	<view class="nothing" wx:if="{{peopleList.length == 0}}">
 		<view class="box">
 
-			暂时还没有其他助力者
-			分享你的邀请捐，邀请大家来助力吧！
+		
+			<view>	暂时还没有其他助力者</view>
+			<view>分享你的邀请捐，邀请大家来助力吧！</view>
+
 
 		</view>
 	</view>
 
 
+
+</view>
+
+<view class="toast" wx:if="{{showToast2}}">
+
+      <view class=" {{anmToast2 ? 'show box' : 'hid box'}}">
+			  
+           <view class="return" bindtap="closeToast">
+					    
+					 </view>
+
+			     <view class="list">
+					 
+					    <view class="title">
+							    自定义金额 <text>（输入金额为整数）</text>
+							</view>
+
+							<view class="input">
+							    <input placeholder="{{plaInput}}" type="number" placeholder-class="plainput" value="{{donnorMoney}}" bindinput="changeMoney"></input>
+							</view>
+					 
+              <view class="check">
+							   <view class="{{donnorCheck ? 'checked' : 'cir'}}" bindtap="changeCheck"></view>
+							   <view class="text">
+								  我已经阅读并同意<text>《邀请捐用户协议》</text>
+								 </view>
+							</view>
+
+							<view class="button">
+							  
+								<view bindtap="sendInvite">确认</view>
+							
+							</view>
+
+					 </view>
+
+			</view>
 
 </view>
 

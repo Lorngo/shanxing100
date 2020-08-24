@@ -119,3 +119,191 @@ line-height: 74rpx;
   background: linear-gradient(#ffa524 0%, #ff9225 100%);
   color: #ffffff;
 }
+
+.toast {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, .5);
+  position: fixed;
+  top: 0rpx;
+}
+
+.toast .box {
+  width: 586rpx;
+  height: 644rpx;
+  background: #ffffff;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  transition: all .5s;
+}
+
+.toast .box .list {
+  width: 494rpx;
+  height: 100%;
+  padding-top: 74rpx;
+}
+
+.toast .box .list .moneyList {
+  width: 474rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 24rpx;
+  margin-bottom: 20rpx;
+}
+
+.toast .box .list .moneyList .changeColor{
+  background: #ff9525 !important;
+  color: rgba(255,255,255,1) !important;
+}
+
+.toast .box .list .moneyList view{
+  width: 138rpx;
+height: 62rpx;
+background: #f7f7f7;
+border-radius: 7rpx;
+font-size: 28rpx;
+font-family: PingFang SC Medium, PingFang SC Medium-Medium;
+font-weight: 500;
+text-align: center;
+color: #333333;
+line-height: 62rpx;
+margin-bottom: 21rpx;
+}
+
+
+.toast .box .list .title {
+  font-size: 30rpx;
+  font-family: PingFang SC Bold, PingFang SC Bold-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #333333;
+}
+
+.toast .box .list .title text {
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+  font-weight: 500;
+  margin-left: -10rpx;
+}
+
+.toast .box .list .input {
+  width: 474rpx;
+  height: 62rpx;
+  background: #f7f7f7;
+  border-radius: 7px;
+  margin-top: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toast .box .list .check {
+  width: 100%;
+  height: 30rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 36rpx;
+}
+
+.toast .box .list .check .cir {
+  box-sizing: border-box;
+  width: 29rpx;
+  height: 29rpx;
+  border-radius: 50%;
+  background: #eeeeee;
+  border: 1rpx solid #dcdcdc;
+}
+
+.toast .box .list .check .checked{
+  box-sizing: border-box;
+  width: 30rpx;
+height: 30rpx;
+border-radius: 50%;
+background: linear-gradient(#ffa524 0%, #ff9225 100%);
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1rpx solid #ff9225;
+}
+
+.toast .box .list .check .checked:after{
+  display: block;
+  content: '';
+  width: 12rpx;
+height: 12rpx;
+background: #ffffff;
+border-radius: 50%;
+}
+
+.toast .box .list .check .text {
+  margin-left: 19rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC Medium, PingFang SC Medium-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #666666;
+}
+
+.toast .box .list .check .text text {
+  color: rgba(255, 151, 37, 1);
+}
+
+.toast .box .list .button {
+  width: 100%;
+  height: 76rpx;
+  margin-top: 35rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.toast .box .list .button view {
+  width: 400rpx;
+  height: 76rpx;
+  background: linear-gradient(#ffa524 0%, #ff9225 100%);
+  border-radius: 38rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC Bold, PingFang SC Bold-Bold;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  line-height: 76rpx;
+}
+
+.toast .box .return{
+  width: 23rpx ;
+  height: 23rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  background-image: url('https://img.vrupup.com/web/wyl/shanxing100/common/close_btn.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.toast .box .list .input input{
+  width: 80%;
+  font-size: 28rpx;
+font-family: PingFang SC Medium, PingFang SC Medium-Medium;
+font-weight: 500;
+text-align: left;
+color: rgba(153, 153, 153, 1);
+line-height: 38rpx;
+letter-spacing: 1rpx;
+}
+
+.toast .show{
+  transform: scale(1);
+  opacity: 1 !important;
+}
+
+.toast .hid{
+  transform:  scale(.1);
+  opacity: .1  !important;
+}
+

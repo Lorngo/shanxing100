@@ -9,48 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    hotList: [{
-        id: 1,
-        title: '今天请为天使点赞',
-        peopleName: '张三',
-        price: 25800,
-        people: 2552
-      },
-      {
-        id: 2,
-        title: '今天请为天使点赞',
-        peopleName: '张三',
-        price: 25800,
-        people: 2552
-      },
-      {
-        id: 3,
-        title: '今天请为天使点赞',
-        peopleName: '张三',
-        price: 25800,
-        people: 2552
-      },
-      {
-        id: 4,
-        title: '今天请为天使点赞',
-        peopleName: '张三',
-        price: 25800,
-        people: 2552
-      },
-      {
-        id: 4,
-        title: '今天请为天使点赞',
-        peopleName: '张三',
-        price: 25800,
-        people: 2552
-      },
-      {
-        id: 4,
-        title: '今天请为天使点赞',
-        peopleName: '张三',
-        price: 25800,
-        people: 2552
-      },
+    hotList: [
     ], //热门推荐
     select: 0, //下拉框选中
     leftList: ['进行中', '未完成', '已完成'], //左边列表
@@ -66,7 +25,7 @@ Page({
    */
   onLoad: function (options) {
 
-     this.getInviteList(0)
+    
 
   },
    
@@ -219,7 +178,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getInviteList(0)
   },
 
   /**

@@ -119,6 +119,14 @@
 					"id": -1,
 					"name": "志愿者信息",
 					"pathName": "pages/pages-list/volunt-info/volunt-info",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "项目详情第一个",
+					"pathName": "pages/pages-list/xmDetail/xmDetail",
+					"query": "goods_id='1'",
 					"scene": null
 				}
 			]
